@@ -1,0 +1,32 @@
+package study.j0424;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@SuppressWarnings("serial")
+@WebServlet("/T8")
+// 접속 url 여러가지 허용하려면 중괄호로 묶고 콤마와 함께 묶는다. 
+public class Test8 extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=utf-8");
+		
+//		response.getWriter().append("1.Served at: ").append(request.getContextPath());
+		System.out.println("이 곳은 Get 메소드입니다.");
+		
+		PrintWriter out = response.getWriter();
+		out.println("<p><a href='/javaclass/study/0424/test8.jsp'>돌아가기</p>");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("2.Served at: ").append(request.getContextPath());
+		System.out.println("이 곳은 Post 메소드입니다.");
+		doGet(request, response);
+	}
+}
