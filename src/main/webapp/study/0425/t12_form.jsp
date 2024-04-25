@@ -37,7 +37,6 @@
 		<div class="mb-3">
 			<label for="job" class="form-label">직업</label>
 			<select name="job">
-				<!-- 선택 부분에 value를 null로 하면 nullPointerException이 발생할 것임 -->
 				<option value="">선택</option>
 				<option>회사원</option>
 				<option>공무원</option>
@@ -63,7 +62,6 @@
 		</div>
 		<div class="mb-3">
 			<label for="content" class="form-label">자기소개</label>
-			<!-- form-control를 쓰면 cols를 안써도 됨 -->
 			<textarea rows="6" name="content" class="form-control"></textarea>
 		</div>
 		<div class="mb-3">
