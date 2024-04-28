@@ -1,0 +1,16 @@
+@charset "UTF-8";
+#header {
+	margin-bottom:0;
+	padding: 1rem;
+}
+
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+#title {
+	font-family: PyeongChangPeace-Bold;
+}

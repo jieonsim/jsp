@@ -40,29 +40,29 @@ if (cookies != null) {
 	<jsp:include page="/include/nav.jsp" />
 	<div class="container mt-5">
 		<div class="login-container"
-			style="max-width: 600px; margin: auto; padding: 20px;">
+			style="max-width: 500px; margin: auto; padding: 20px;">
 			<form class="login-form" method="post" action="ex01_loginOk.jsp">
 				<div class="form-group row">
-					<label for="mid" class="col-sm-2 col-form-label">아이디</label>
-					<div class="col-sm-10">
+					<label for="mid" class="col-sm-4 col-form-label text-center">아이디</label>
+					<div class="col-sm-8">
 						<input type="text" class="form-control mb-3" name="mid"
 							placeholder="아이디를 입력해주세요." value="<%= mid %>" autofocus required />
 					</div>
 				</div>
 				<div class="form-group row">
-					<div class="col-sm-10 offset-sm-2 text-right">
+					<label for="password" class="col-sm-4 col-form-label text-center">비밀번호</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control" name="password"
+							placeholder="비밀번호를 입력해주세요." required />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-10 offset-sm-2 text-right mb-3">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="true"
 								name="rememberId" <%= (!mid.isEmpty() ? "checked" : "") %>> <label class="form-check-label"
 								for="rememberId">아이디 저장</label>
 						</div>
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="password" class="col-sm-2 col-form label">비밀번호</label>
-					<div class="col-sm-10">
-						<input type="password" class="form-control mb-3" name="password"
-							placeholder="비밀번호를 입력해주세요." required />
 					</div>
 				</div>
 				<div class="form-group row text-center">

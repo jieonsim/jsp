@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.custom-nav-navbar, .custom-nav-link, .studyBtn {
+	color: black;
+}
+
+.custom-nav-navbar:hover, .custom-nav-link:hover {
+    background-color: deeppink;
+    color: white;
+}
+
+.dropdown-toggle:hover {
+    background-color: deeppink;
+    color: white;
+    border-radius: 0;
+}
+
+.dropdown-toggle[aria-expanded="true"] {
+    background-color: deeppink;
+    color: white;
+    border-radius: 0;
+}
+
