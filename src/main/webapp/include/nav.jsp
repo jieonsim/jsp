@@ -1,30 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/include/nav.css">
 <%
-	String mid_ = session.getAttribute("sMid")==null ? "" : (String) session.getAttribute("sMid");
+  String mid_ = session.getAttribute("sMid")==null ? "" : (String) session.getAttribute("sMid");
 %>
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-<div class="container">
-  <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a>
-  <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a> -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="#">Guest</a>
-      </li>
-<%if(!mid_.equals("")) {%>
-      <li class="nav-item">
+  <div class="container">
+    <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
+  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a> -->
+    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link" href="#">Guest</a>
+        </li>
+        <%if(!mid_.equals("")) {%>
+        <li class="nav-item">
         <a class="nav-link custom-nav-link" href="#">Board</a>
-      </li>
-      <li class="nav-item">
+      	</li>
+      	<li class="nav-item">
         <a class="nav-link custom-nav-link" href="#">PDS</a>
         <!-- posting data system (자료실)  -->
-      </li>
-      <li class="nav-item">
+      	</li>
+      	<li class="nav-item">
 		  <div class="dropdown">
 		    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
 		      Study1
@@ -42,16 +42,21 @@
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0429_JSTL/jstl1.jsp">JSTL(Java Standard Tag Library) 연습</a>
 		    </div>
 		  </div>
-      </li>
-<%    } %>
-      <li class="nav-item">
-<%    if(!mid_.equals("")) { %>
-        <a class="nav-link custom-nav-link" href="${pageContext.request.contextPath}/j0427/Logout">Logout</a>
-<%    } else { %>
-        <a class="nav-link custom-nav-link" href="<%=request.getContextPath()%>/study/0428_Login/login.jsp">Login</a>
-<%    } %>
-      </li>
-    </ul>
+      	</li>
+        <% } %>
+      </ul>
+      <!-- This new 'ul' element with class 'ml-auto' will push the login/logout to the right -->
+      <ul class="navbar-nav ml-auto">
+        <%if(!mid_.equals("")) {%>
+          <li class="nav-item">
+            <a class="nav-link custom-nav-link" href="${pageContext.request.contextPath}/j0427/Logout" id="logout">Logout</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link custom-nav-link" href="<%=request.getContextPath()%>/study/0428_Login/login.jsp" id="login">Login</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
   </div>
-</div>
 </nav>

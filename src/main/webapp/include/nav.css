@@ -19,3 +19,8 @@
     font-weight: bolder;
 }
 
+#login, #logout {
+	background-color: cornflowerblue;
+	color: white;
+	border-radius: 0;
+}
