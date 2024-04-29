@@ -9,6 +9,7 @@ if (cookies != null) {
     for (Cookie c : cookies) {
         if (c.getName().equals("cMid")) {
             mid = c.getValue();
+            /* pageContext.setAttribute("mid", c.getValue()); -> 11라인 대신 12라인으로 처리 가능한지 지피티 확인해보기*/
             break;
         }
     }
