@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/include/nav.css">
+<!-- <link rel="stylesheet" type="text/css" href="/include/nav.css"> -->
 <%
   String mid_ = session.getAttribute("sMid")==null ? "" : (String) session.getAttribute("sMid");
 %>
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a>
-    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a> -->
+  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a> -->
+    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

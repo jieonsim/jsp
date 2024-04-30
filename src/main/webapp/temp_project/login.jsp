@@ -37,20 +37,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group row">
+				<!-- <div class="form-group row"> -->
 					<!-- <div class="col-sm-10 offset-sm-2 text-left mb-3"> -->
 					<div class="col">
-						<input type="button" class="btn btn-custom" value="아이디 찾기" style="font-size: small; color: gray;" />
+						<input type="button" class="btn btn-custom btn-sm" value="아이디 찾기" style="font-size: small; color: gray;" />
 						<span id="divisionLine" style="font-size: small; color: gray;">I</span>
-						<input type="button" class="btn btn-custom" value="비밀번호 찾기"  style="font-size: small; color: gray;"/>
+						<input type="button" class="btn btn-custom btn-sm" value="비밀번호 찾기"  style="font-size: small; color: gray;"/>
 					</div>
-				</div>
+				<!-- </div> -->
 				<div class="form-group text-center">
 					<div>
-						<button type="submit" class="btn btn-dark form-control mb-3" id="logIn">로그인</button>
+						<button type="submit" class="btn btn-dark btn-lg form-control mb-3" id="logIn" style="background-color: #7bc46e; border: none">로그인</button>
 					</div>
 					<div>
-						<button type="button" class="btn btn-custom form-control" id="logOut" style="background-color: white; border: 1px solid black;">회원가입</button>
+						<button type="button" class="btn btn-custom btn-lg form-control" id="logOut" style="background-color: white; border: 1px solid #8fd685; color: #7bc46e;">회원가입</button>
 					</div>
 				</div>
 			</form>
