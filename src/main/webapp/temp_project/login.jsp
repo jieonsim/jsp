@@ -11,7 +11,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
-	<div class="container mt-5">
+	<div class="container mt-5 pt-3">
 		<div class="login-container"
 			style="max-width: 400px; margin: auto; padding: 20px; text-align: center;">
 			<h4 class="mb-5" style="font-weight: bold">로그인</h4>

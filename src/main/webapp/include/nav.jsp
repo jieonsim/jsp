@@ -6,8 +6,8 @@
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,13 +39,13 @@
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/homework/ex01_login.jsp">쿠키를 이용한 로그인 시 아이디 저장 연습(mine)</a>
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/homework/ex1_Login.jsp">쿠키를 이용한 로그인 시 아이디 저장 연습(teacher)</a>
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0429_JSTL/el1.jsp">EL(Expression Language) 연습</a>
-		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0429_JSTL/jstl1.jsp">JSTL(Java Standard Tag Library) 연습</a>
+		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0429_JSTL/jstl1.jsp?jumsu=85&code=K">JSTL(Java Standard Tag Library) 연습</a>
+		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0430_web_xml/filter/t1_Filter.jsp">Filter 한글 연습</a>
 		    </div>
 		  </div>
       	</li>
         <% } %>
       </ul>
-      <!-- This new 'ul' element with class 'ml-auto' will push the login/logout to the right -->
       <ul class="navbar-nav ml-auto">
         <%if(!mid_.equals("")) {%>
           <li class="nav-item">

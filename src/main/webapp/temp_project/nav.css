@@ -4,5 +4,14 @@
 }
 
 .fa-solid, .fa-regular {
-	color: darkgray;
+	color: black;
+}
+
+nav .container a {
+  text-decoration: none;
+  color: black;
+}
+nav .container a:hover {
+  text-decoration: none;
+  color: black;
 }
