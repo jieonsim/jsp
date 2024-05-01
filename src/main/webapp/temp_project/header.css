@@ -30,7 +30,11 @@
 
 #localLens {
   font-family: ClimateCrisisKR-1979;
-  font-size: 36px;
+  font-size: 30px;
+  color: black;
+}
+
+#L1, #L2 {
   color: #7bc46e;
 }
 
@@ -60,11 +64,11 @@ header .container a:hover {
 }
 
 #today {
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 }
 
 #forYou {
-	letter-spacing: 0px;
+	letter-spacing: 2px;
 }
 
 #divisionLine, #forYou {

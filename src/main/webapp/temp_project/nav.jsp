@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/nav.css"> --%>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/nav.css">
 <!-- <link rel="stylesheet" type="text/css" href="nav.css"> -->
 <style>
 #navbar {
@@ -10,16 +10,6 @@
     color: black;
 }
 
-/* nav .container a {
-    text-decoration: none;
-    color: black;
-}
-
-nav .container a:hover {
-    text-decoration: none;
-    color: black;
-} */
-
 nav ul {
   list-style: none;
   text-align: center;
@@ -28,27 +18,35 @@ nav ul {
 nav ul li {
   display: inline-block;
 }
+
 nav ul li a {
   display: block;
   padding: 15px;
   text-decoration: none;
-  color: black;
-  /* font-weight: 800; */
-  text-transform: uppercase;
+  color: black; 
   margin: 0 10px;
 }
+
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
   transition: all .5s;
 }
+
 nav ul li a:hover {
   color: black;
+}
+
+nav ul li a:hover .fa-solid,
+nav ul li a:hover .fa-regular {
+  color: #7bc46e;
+  transition: .3s;
 }
 
 nav.navbar ul li a {
   position: relative;
 }
+
 nav.navbar ul li a:after {
   position: absolute;
   bottom: 0;
@@ -61,11 +59,11 @@ nav.navbar ul li a:after {
   background: #aaa;
   height: 1px;
 }
+
 nav.navbar ul li a:hover:after {
   width: 100%;
 }
 </style>
-
 <nav class="navbar navbar-expand container-fluid mt-3 pb-3" id="navbar">
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -91,6 +89,7 @@ nav.navbar ul li a:hover:after {
                 <li class="nav-item">
                     <a href="#" class="nav-link mx-3">
                         <i class="fa-regular fa-bookmark"></i>
+                        <!-- <i class="fa-solid fa-bookmark"></i> -->
                         <span class="ml-2">보관함</span>
                     </a>
                 </li>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/header.css"> --%>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/header.css">
 <!-- <link rel="stylesheet" type="text/css" href="header.css"> -->
 <style>
 @font-face {
@@ -33,6 +33,10 @@
 #localLens {
   font-family: ClimateCrisisKR-1979;
   font-size: 30px;
+  color: black;
+}
+
+#L1, #L2 {
   color: #7bc46e;
 }
 
@@ -83,12 +87,11 @@ header .container a:hover {
 	min-width: 10px;
 }
 </style>
-
 <header class="container-fluid mt-4">
 	<div class="container">
 		<div class="row align-items-center justify-content-between">
 			<div class="col-auto">
-				<a href="#" class="header-link" id="localLens">Local Lens</a>
+				<a href="" class="header-link" id="localLens"><span id="L1">L</span>ocal <span id="L2">L</span>ens</a>
 			</div>
 			<div class="col-auto d-flex align-items-center">
 				<a href="#" class="header-link" id="today">TODAY</a>
@@ -100,8 +103,8 @@ header .container a:hover {
                         <button class="btn position-absolute end-0 me-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form> -->
 			<div class="col-auto d-flex align-items-center">
-				<a href="#" class="header-link-small" id="signUp">회원가입</a>
-			    <a href="#" class="header-link-small" id="logIn">로그인</a>
+				<a href="#" class="header-link-small">회원가입</a>
+			    <a href="#" class="header-link-small">로그인</a>
 			    <!-- <div class="dropdown">
 			        <a href="#" class="header-link-small dropdown-toggle" id="account" aria-haspopup="true" aria-expanded="false">
 			            심지언 님

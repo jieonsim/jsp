@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Local Lens</title>
+	<title>LOCAL LENS</title>
 	<jsp:include page= "bs4.jsp" />
 </head>
 <body>

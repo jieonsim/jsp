@@ -28,7 +28,7 @@
 <jsp:include page="/include/nav.jsp" />
 <p><br/></p>
 <div class="container">
-  <form name="myform" method="post" action="${ctp}/database/LoginOk.jsp">
+  <form name="myform" method="post" action="${ctp}/database/LoginOk">
     <table class="table table-bordered text-center">
       <tr>
         <td colspan="2"><font size="5">로 그 인</font></td>
@@ -39,7 +39,7 @@
       </tr>
       <tr>
         <th>비밀번호</th>
-        <td><input type="password" name="pwd" value="1234" required class="form-control"/></td>
+        <td><input type="password" name="pwd" required class="form-control"/></td>
       </tr>
       <tr>
         <td colspan="2">
