@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/include/nav.css">
-<!-- <link rel="stylesheet" type="text/css" href="/include/nav.css"> -->
+
 <%
   String mid_ = session.getAttribute("sMid")==null ? "" : (String) session.getAttribute("sMid");
 %>
+
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/">Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,6 +43,9 @@
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0429_JSTL/el1.jsp">EL(Expression Language) 연습</a>
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0429_JSTL/jstl1.jsp?jumsu=85&code=K">JSTL(Java Standard Tag Library) 연습</a>
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0430_web_xml/filter/t1_Filter.jsp">Filter 한글 연습</a>
+		      <%-- <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0430_web_xml/filter/t2_Certification.jsp">인증코드 발행(관리자)</a> --%>
+		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0430_web_xml/init/t03_init.jsp">초기값 확인(init)</a>
+		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/database/LoginList">데이터베이스 연습(회원메인방)</a>
 		    </div>
 		  </div>
       	</li>
@@ -50,11 +54,11 @@
       <ul class="navbar-nav ml-auto">
         <%if(!mid_.equals("")) {%>
           <li class="nav-item">
-            <a class="nav-link custom-nav-link" href="${pageContext.request.contextPath}/j0427/Logout" id="logout">Logout</a>
+            <a class="nav-link custom-nav-link" href="${pageContext.request.contextPath}/database/Logout" id="logout">Logout</a>
           </li>
         <% } else { %>
           <li class="nav-item">
-            <a class="nav-link custom-nav-link" href="<%=request.getContextPath()%>/study/0428_Login/login.jsp" id="login">Login</a>
+            <a class="nav-link custom-nav-link" href="<%=request.getContextPath()%>/study/database/login.jsp" id="login">Login</a>
           </li>
         <% } %>
       </ul>

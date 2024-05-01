@@ -3,5 +3,5 @@
 
 <div id="header" class="jumbotron bg-white text-center">
   <h2 id="title">Jieon's archive</h2>
-  <p>welcome to my homepage</p> 
+  <p>welcome to my homepage</p>
 </div>

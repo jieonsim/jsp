@@ -17,8 +17,8 @@
 	'use strict';
 	
 	function fCheck(flag) {
-		if(flag == 'OK') myform.action = "${ctp}/j0430/T01Ok";
-		else myform.action = "";
+		if(flag == 'OK') myform.action = "${ctp}/j0430/T01Ok1";
+		else myform.action = "${ctp}/j0430/T01Ok2";
 		myform.submit();
 	}
 </script>
@@ -26,7 +26,7 @@
 	<h2>Filter 한글 처리 연습</h2>
 	<form name="myform" method="post" >
 		<div><input type="text" name="content" value="간단한 소개입니다." class="form-control" autofocus></div>
-		<div><textarea rows="5" name="introduce" value="사이트 소개입니다." class="form-control" autofocus></textarea></div>
+		<div><textarea rows="5" name="introduce" class="form-control" autofocus>자기소개 뇽뇽</textarea></div>
 		<div><input type="button" value="전송1" onclick="fCheck('OK')" class="btn btn-success form-control mt-3 mb-3"></div>
 		<div><input type="button" value="전송2" onclick="fCheck('NO')" class="btn btn-primary form-control"></div>
 		<div></div>

@@ -19,13 +19,13 @@
 				<div class="form-group row">
 					<div class="col">
 						<input type="text" class="form-control" name="mid"
-							placeholder="아이디를 입력해주세요." <%-- value="<%=mid %>" --%> autofocus required />
+							placeholder="아이디를 입력해주세요." <%-- value="<%=mid %>" --%> style="border-radius: 0" autofocus required />
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col">
 						<input type="password" class="form-control" name="password"
-							placeholder="비밀번호를 입력해주세요." required />
+							placeholder="비밀번호를 입력해주세요." style="border-radius: 0" required />
 					</div>
 				</div>
 				<div class="form-group row">
@@ -47,10 +47,10 @@
 				<!-- </div> -->
 				<div class="form-group text-center">
 					<div>
-						<button type="submit" class="btn btn-dark btn-lg form-control mb-3" id="logIn" style="background-color: #7bc46e; border: none">로그인</button>
+						<button type="submit" class="btn btn-dark btn-lg form-control mb-3" id="logIn" style="background-color: #7bc46e; border: none; border-radius: 0">로그인</button>
 					</div>
 					<div>
-						<button type="button" class="btn btn-custom btn-lg form-control" id="logOut" style="background-color: white; border: 1px solid #8fd685; color: #7bc46e;">회원가입</button>
+						<button type="button" class="btn btn-custom btn-lg form-control" id="logOut" style="background-color: white; border: 1px solid #8fd685; color: #7bc46e; border-radius: 0">회원가입</button>
 					</div>
 				</div>
 			</form>

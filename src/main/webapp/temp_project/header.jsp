@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="header.css">
-
+<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/header.css"> --%>
+<!-- <link rel="stylesheet" type="text/css" href="header.css"> -->
 <style>
-@charset "UTF-8";
-
 @font-face {
     font-family: 'SUITE-Heavy';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Heavy.woff2') format('woff2');
@@ -34,12 +32,8 @@
 
 #localLens {
   font-family: ClimateCrisisKR-1979;
-  font-size: 36px;
+  font-size: 30px;
   color: #7bc46e;
-  /* color: #a3de9b; */
-  /* text-shadow: 0px 0px 10px gray; */
-  /* color: white; */
-  /* -webkit-text-stroke: 1px black; */
 }
 
 .header-link {
@@ -68,11 +62,11 @@ header .container a:hover {
 }
 
 #today {
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 }
 
 #forYou {
-	letter-spacing: 0px;
+	letter-spacing: 2px;
 }
 
 #divisionLine, #forYou {
@@ -88,10 +82,9 @@ header .container a:hover {
   	font-size: 14px;
 	min-width: 10px;
 }
-
 </style>
 
-<header class="container-fluid mt-3">
+<header class="container-fluid mt-4">
 	<div class="container">
 		<div class="row align-items-center justify-content-between">
 			<div class="col-auto">
