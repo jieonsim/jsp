@@ -4,13 +4,14 @@
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 
-.fa-solid, .fa-regular {
+.fa-solid {
     color: black;
 }
 
 nav ul {
   list-style: none;
   text-align: center;
+  font-size: 18px;
 }
 
 nav ul li {
@@ -35,12 +36,6 @@ nav ul li a:hover {
   color: black;
 }
 
-nav ul li a:hover .fa-solid,
-nav ul li a:hover .fa-regular {
-  color: #7bc46e;
-  transition: .3s;
-}
-
 nav.navbar ul li a {
   position: relative;
 }
@@ -61,4 +56,12 @@ nav.navbar ul li a:after {
 nav.navbar ul li a:hover:after {
   width: 100%;
 }
+
+/* 
+nav ul li a:hover .fa-solid,
+nav ul li a:hover .fa-regular {
+  color: #7bc46e;
+  transition: .3s;
+} 
+*/
 </style>

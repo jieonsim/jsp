@@ -41,14 +41,14 @@
 				<div class="dropdown">
 					<button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">정렬선택</button>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" onclick="location.href='${ctp}/TheLatestJoinList';">가입 최신순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/TheOldestJoinList';">가입 오래된순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/MidDescendingList';">아이디 내림차순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/MidAscendingList';">아이디 오름차순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/NameDescendingList';">이름 내림차순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/NameAscendingList';">이름 오름차순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/AgeDescendingList';">나이 내림차순</a>
-						<a class="dropdown-item" onclick="location.href='${ctp}/AgeAscendingList';">나이 오름차순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=latest';">가입 최신순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=oldest';">가입 오래된순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=midDesc';">아이디 내림차순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=midAsc';">아이디 오름차순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=nameDesc';">이름 내림차순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=nameAsc';">이름 오름차순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=ageDesc';">나이 내림차순</a>
+						<a class="dropdown-item" onclick="location.href='${ctp}/SortList?sort=ageAsc';">나이 오름차순</a>
 					</div>
 				</div>
 		</div>

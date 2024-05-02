@@ -1,20 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 @font-face {
-    font-family: 'SUITE-Heavy';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Heavy.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SUIT-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Pretendard-Light';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
     font-weight: 300;
@@ -34,18 +20,8 @@
   color: black;
 }
 
-#L1, #L2 {
-  color: #7bc46e;
-}
-
 .header-link {
-  font-size: 24px;
-  margin-right: 25px;
-}
-
-.header-link-small {
   font-family: 'Pretendard-Light';
-  /* font-size: 16px; */
   font-size: 14px;
   margin-left: 20px;
 }
@@ -60,23 +36,24 @@ header .container a:hover {
   color: black;
 }
 
-#today, #forYou {
-	font-family: SUIT-Regular;
+.search-input {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 10px 40px 10px 20px;
+    /* width: 100%; */
+    width: 300px;
 }
 
-#today {
-	letter-spacing: 3px;
+.search-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
-#forYou {
-	letter-spacing: 2px;
-}
-
-#divisionLine, #forYou {
-	color: gray;
-}
-
-.dropdown:hover .dropdown-menu {
+/* .dropdown:hover .dropdown-menu {
         display: block;
 }
 
@@ -85,4 +62,5 @@ header .container a:hover {
   	font-size: 14px;
 	min-width: 10px;
 }
+ */
 </style>

@@ -63,24 +63,6 @@ public class LoginDAO {
 		pstmtClose();
 	}
 
-	public void close() {
-		if (rs != null)
-			try {
-				rs.close();
-			} catch (SQLException e) {
-			}
-		if (pstmt != null)
-			try {
-				pstmt.close();
-			} catch (SQLException e) {
-			}
-		if (conn != null)
-			try {
-				conn.close();
-			} catch (SQLException e) {
-			}
-	}
-
 	// 아이디 체크 , select 절에는 result로 받아야하기 때문에 rsClose()필요
 	public LoginVO getLoginIdCheck(String mid, String pwd) {
 		LoginVO vo = new LoginVO();
@@ -267,222 +249,45 @@ public class LoginDAO {
 		}
 	}
 
-	// 회원 정보 가입 최신순
-	public ArrayList<LoginVO> getTheLatestJoinList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by idx desc";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-	
-	// 회원 정보 가입 오래된순
-	public ArrayList<LoginVO> getTheOldestJoinList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by idx";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-
-	// 회원정보 아이디 내림차순
-	public ArrayList<LoginVO> getMidDescendingList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by mid desc";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-	
-	// 회원정보 아이디 오름차순
-	public ArrayList<LoginVO> getMidAscendingList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by mid";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-	
-	// 회원정보 이름 내림차순
-	public ArrayList<LoginVO> getNameDescendingList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by name desc";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-	
-	// 회원정보 이름 오름차순
-	public ArrayList<LoginVO> getNameAscendingList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by name";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-	
-	// 회원정보 나이 내림차순
-	public ArrayList<LoginVO> getAgeDescendingList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by age desc";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-	
-	// 회원정보 나이 오름차순
-	public ArrayList<LoginVO> getAgeAscendingList() {
-		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-		try {
-			sql = "select * from hoewon order by age";
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				vo = new LoginVO();
-				vo.setIdx(rs.getInt("idx"));
-				vo.setMid(rs.getString("mid"));
-				vo.setPwd(rs.getString("pwd"));
-				vo.setName(rs.getString("name"));
-				vo.setAge(rs.getInt("age"));
-				vo.setGender(rs.getString("gender"));
-				vo.setAddress(rs.getString("address"));
-				vos.add(vo);
-			}
-		} catch (SQLException e) {
-			System.out.println("SQL 오류 : " + e.getMessage());
-		} finally {
-			rsClose();
-		}
-		return vos;
-	}
-
+	// 회원메인방의 회원 리스트 정렬 순서 선택
 	public ArrayList<LoginVO> getListSorted(String sortType) {
-		// TODO Auto-generated method stub
-		return null;
+	    ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
+	    try {
+	    	sql = sortListCommonSqlQuery(sortType); 
+	        pstmt = conn.prepareStatement(sql);
+	        rs = pstmt.executeQuery();
+	        while (rs.next()) {
+	            LoginVO vo = new LoginVO();
+	            vo.setIdx(rs.getInt("idx"));
+	            vo.setMid(rs.getString("mid"));
+	            vo.setPwd(rs.getString("pwd"));
+	            vo.setName(rs.getString("name"));
+	            vo.setAge(rs.getInt("age"));
+	            vo.setGender(rs.getString("gender"));
+	            vo.setAddress(rs.getString("address"));
+	            vos.add(vo);
+	        }
+	    } catch (SQLException e) {
+	        System.out.println("SQL 오류 : " + e.getMessage());
+	    } finally {
+	        rsClose();
+	    }
+	    return vos;
 	}
 	
-	/*
-	 * private String buildSqlQuery(String sortType) {
-	 * 
-	 * }
-	 */
+	// 정렬 순서 선택을 위한 sql 공통 쿼리 + order by 필드명 desc or 생략
+	private String sortListCommonSqlQuery(String sortType) {
+	    String baseSql = "SELECT * FROM hoewon ";
+	    switch (sortType) {
+	        case "latest": return baseSql + "ORDER BY idx DESC";
+	        case "oldest": return baseSql + "ORDER BY idx";
+	        case "midDesc": return baseSql + "ORDER BY mid DESC";
+	        case "midAsc": return baseSql + "ORDER BY mid";
+	        case "nameDesc": return baseSql + "ORDER BY name DESC";
+	        case "nameAsc": return baseSql + "ORDER BY name";
+	        case "ageDesc": return baseSql + "ORDER BY age DESC";
+	        case "ageAsc": return baseSql + "ORDER BY age";
+	        default: return baseSql;
+	    }
+	}
 }

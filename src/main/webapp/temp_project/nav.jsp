@@ -6,15 +6,15 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav w-100 justify-content-between list-unstyled d-flex">
                 <li class="nav-item">
-                    <a href="#" class="nav-link mx-3">
-                        <i class="fa-solid fa-map"></i>
-                        <span class="ml-2">지도</span>
+                    <a href="#" class="nav-link mx-3 pl-5">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="ml-2">홈</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link mx-3">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span class="ml-2">검색</span>
+                        <i class="fa-solid fa-map"></i>
+                        <span class="ml-2">지도</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -25,13 +25,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link mx-3">
-                        <i class="fa-regular fa-bookmark"></i>
-                        <!-- <i class="fa-solid fa-bookmark"></i> -->
+                        <i class="fa-solid fa-bookmark"></i>
                         <span class="ml-2">보관함</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mx-3">
+                    <a href="#" class="nav-link mx-3 pr-3">
                         <i class="fa-solid fa-user" id="profile"></i>
                         <span class="ml-2">프로필</span>
                     </a>

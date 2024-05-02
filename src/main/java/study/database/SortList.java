@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class SortList extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sortType = request.getParameter("sort");
+		String sortType = request.getParameter("sort")==null ? "" : request.getParameter("sort");
 		
 		LoginDAO dao = new LoginDAO();
 		

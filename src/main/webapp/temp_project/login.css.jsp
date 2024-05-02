@@ -24,16 +24,14 @@
 
 #logIn {
 	color: white;
-	background-color: #7bc46e;
+	background-color: black;
 	border: none;
-	border-radius: 0;
 }
 
-#logOut {
+#signUp {
 	background-color: white;
-	border: 1px solid #8fd685;
-	color: #7bc46e;
-	border-radius: 0;
+	border: 1px solid black;
+	color: black;
 }
 
 #rememberId {
@@ -42,7 +40,7 @@
 }
 
 input[type='checkbox'] {
-    accent-color: #7bc46e;
+    accent-color: black;
 }
 
 @font-face {

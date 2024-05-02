@@ -5,21 +5,18 @@
 	<div class="container">
 		<div class="row align-items-center justify-content-between">
 			<div class="col-auto">
-				<a href="" class="header-link" id="localLens"><span id="L1">L</span>ocal <span id="L2">L</span>ens</a>
-			</div>
+				<a href="" class="header-link" id="localLens">Local Lens</a>
+			</div>						
+            <div class="col-auto position-relative">
+                <input class="search-input" type="search" placeholder="검색어를 입력해주세요." aria-label="Search">
+                <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
 			<div class="col-auto d-flex align-items-center">
-				<a href="#" class="header-link" id="today">TODAY</a>
+				<a href="#" class="header-link">회원가입</a>
 				<span class="header-link" id="divisionLine">|</span>
-				<a href="#" class="header-link" id="forYou">FOR YOU</a>
-			</div>
-			<!-- <form class="d-flex align-items-center position-relative">
-                        <input class="form-control me-2" type="search" placeholder="검색어를 입력해주세요." aria-label="Search">
-                        <button class="btn position-absolute end-0 me-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form> -->
-			<div class="col-auto d-flex align-items-center">
-				<a href="#" class="header-link-small">회원가입</a>
-			    <a href="#" class="header-link-small">로그인</a>
-			    <!-- <div class="dropdown">
+			    <a href="#" class="header-link">로그인</a>
+			    <!--
+			    <div class="dropdown">
 			        <a href="#" class="header-link-small dropdown-toggle" id="account" aria-haspopup="true" aria-expanded="false">
 			            심지언 님
 			        </a>
@@ -27,7 +24,9 @@
 			            <a class="dropdown-item" href="#">로그아웃</a>
 			            <a class="dropdown-item" href="#">프로필 수정</a>
 			        </div>
-			    </div> -->
+			    </div>
+			    -->
+			    <!-- 
 			    <div class="dropdown">
 			        <a href="#" class="header-link-small dropdown-toggle" id="cs" aria-haspopup="true" aria-expanded="false">
 			            고객센터
@@ -38,6 +37,7 @@
 			            <a class="dropdown-item" href="#">1:1문의</a>
 			        </div>
 			    </div>
+			     -->
 			</div>			
 		</div>
 	</div>

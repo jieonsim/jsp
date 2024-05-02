@@ -53,7 +53,7 @@
                         <button type="submit" class="btn btn-custom btn-lg form-control mb-3" id="logIn">로그인</button>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-custom btn-lg form-control" id="logOut">회원가입</button>
+                        <button type="button" class="btn btn-custom btn-lg form-control" id="signUp">회원가입</button>
                     </div>
                 </div>
             </form>
