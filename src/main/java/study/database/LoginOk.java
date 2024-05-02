@@ -21,12 +21,10 @@ public class LoginOk extends HttpServlet {
 		
 		LoginDAO dao = new LoginDAO();
 		
-		/* LoginVO vo = new LoginVO(); */
-		// 위 방법도 있지만 선언과 생성을 동시에 할 수 있다.
+		// LoginVO vo = new LoginVO();
 		LoginVO vo = dao.getLoginIdCheck(mid, pwd);
-		/* System.out.println("vo : " + vo); */
+		//System.out.println("vo : " + vo);
 		
-		// 스크립트 활용 방법(잘 쓰지 않는 방법)
 		PrintWriter out = response.getWriter();
 		
 		if(vo.getMid() != null) {
@@ -43,20 +41,24 @@ public class LoginOk extends HttpServlet {
 			}
 			response.addCookie(cookieMid);
 			
-			// 필요한 정보를 session에 저장 처리한다.
+			
+			// 필요한 정보를 session에 저장처리한다.
 			HttpSession session = request.getSession();
 			session.setAttribute("sMid", mid);
+			// 회원의 성명을 세션에 저장하기위해 DB에서 가져온 name을 세션에 저장처리한다.
+			session.setAttribute("sName", vo.getName());
+			
 			
 			out.println("<script>");
-			out.println("alert('"+mid+"님 로그인 되었습니다.')");
+			out.println("alert('"+mid+"님 로그인 되었습니다.');");
 			out.println("location.href='"+request.getContextPath()+"/study/database/LoginList';");
 			out.println("</script>");
 		}
 		else {
 			out.println("<script>");
-			out.println("alert('로그인에 실패하였습니다.')");
+			out.println("alert('로그인 실패~~');");
 			out.println("location.href='"+request.getContextPath()+"/study/database/login.jsp';");
-			out.println("</script>");			
+			out.println("</script>");
 		}
 	}
 }

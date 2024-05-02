@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/TheLatestJoinList")
-public class TheLatestJoinList extends HttpServlet {
+@WebServlet("/TheOldestJoinList")
+public class TheOldestJoinList extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LoginDAO dao = new LoginDAO();
 
-		ArrayList<LoginVO> vos = dao.getTheLatestJoinList();
+		ArrayList<LoginVO> vos = dao.getTheOldestJoinList();
 		request.setAttribute("vos", vos);
 
 		String viewPage = "/study/database/loginMain.jsp"; 

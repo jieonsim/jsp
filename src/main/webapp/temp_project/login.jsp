@@ -6,64 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOCAL LENS</title>
 <jsp:include page="bs4.jsp" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/login.css">
-<style>
-.login-container {
-	max-width: 400px;
-	margin: auto;
-	padding: 20px;
-	text-align: center;
-}
-
-.form-control {
-	border-radius: 0;
-}
-
-#divisionLine {
-	font-size: small;
-	color: gray;
-}
-
-.link-small {
-	font-size: small;
-	color: gray;
-	text-decoration: none;
-}
-
-#logIn {
-	color: white;
-	background-color: #7bc46e;
-	border: none;
-	border-radius: 0;
-}
-
-#logOut {
-	background-color: white;
-	border: 1px solid #8fd685;
-	color: #7bc46e;
-	border-radius: 0;
-}
-
-#rememberId {
-	font-size: 14px;
-	color: dimgrey;
-}
-
-input[type='checkbox'] {
-    accent-color: #7bc46e;
-}
-
-@font-face {
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-h4 {
-	font-family: 'Pretendard-SemiBold';
-}
-</style>
+<jsp:include page="login.css.jsp" />
 </head>
 <body>
     <jsp:include page="header.jsp" />

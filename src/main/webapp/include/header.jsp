@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/include/header.css">
+<jsp:include page="/include/header_css.jsp" />
 
 <div id="header" class="jumbotron bg-white text-center">
   <h2 id="title">Jieon's archive</h2>

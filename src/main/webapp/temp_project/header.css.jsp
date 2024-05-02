@@ -1,5 +1,5 @@
-@charset "UTF-8";
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style>
 @font-face {
     font-family: 'SUITE-Heavy';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Heavy.woff2') format('woff2');
@@ -54,6 +54,7 @@ header .container a {
   text-decoration: none;
   color: black;
 }
+
 header .container a:hover {
   text-decoration: none;
   color: black;
@@ -84,3 +85,4 @@ header .container a:hover {
   	font-size: 14px;
 	min-width: 10px;
 }
+</style>

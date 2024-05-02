@@ -21,6 +21,6 @@ public class FilterTest implements Filter {
 		
 		chain.doFilter(request, response);
 		
-		/* System.out.println("2. 필터 수행 후 입니다."); */
+		/* System.out.println("2. 필터 수행 후 입니다.\n"); */
 	}
 }

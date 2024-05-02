@@ -1,5 +1,5 @@
-@charset "UTF-8";
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style>
 #navbar {
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
@@ -61,3 +61,4 @@ nav.navbar ul li a:after {
 nav.navbar ul li a:hover:after {
   width: 100%;
 }
+</style>

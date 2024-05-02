@@ -6,55 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOCAL LENS</title>
 <jsp:include page="bs4.jsp" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/temp_project/signUp.css">
-<style>
-.signUp-container {
-	max-width: 700px;
-	margin: auto;
-	padding: 20px;
-	text-align: center;
-}
-
-.form-control {
-	border-radius: 0;
-}
-
-.link-small {
-	font-size: small;
-	color: gray;
-	text-decoration: none;
-}
-
-#address, #idDuplicated, #emailDuplicated, #phoneDuplicated {
-	background-color: white;
-	border: 1px solid #8fd685;
-	color: #7bc46e;
-	border-radius: 0;
-}
-
-#signUp {
-	color: white;
-	background-color: #7bc46e;
-	border: none;
-	border-radius: 0;
-}
-
-@font-face {
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-
-h3 {
-	font-family: 'Pretendard-SemiBold';
-}
-
-label {
-	text-align: left;
-}
-</style>
+<jsp:include page="signUp.css.jsp" />
 </head>
 <body>
     <jsp:include page="header.jsp" />
@@ -123,6 +75,23 @@ label {
                     </div>
                 </div>
                 <hr>
+                <div class="form-group">
+                	<h4 class="text-left">관심 지역 설정</h4>
+                	<hr>
+					<label for="mountain" class="text-left form-label">상위 지역 설정</label>
+					<select name="mountain" class="form-control" size="5" multiple>
+						<option>백두산</option>
+						<option>한라산</option>
+						<option>태백산</option>
+						<option>속리산</option>
+						<option>소백산</option>
+						<option>금강산</option>
+						<option>우암산</option>
+						<option>대둔산</option>
+						<option>보문산</option>
+					</select>					
+                	<h5 class="text-left">하위 지역 설정</h5>
+                </div>
                 <div class="form-group row text-center">
                 	<div class="col-sm-3"></div>
                     <div class="col-sm-6 mt-3">

@@ -1,5 +1,5 @@
-@charset "UTF-8";
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style>
 .login-container {
 	max-width: 400px;
 	margin: auto;
@@ -55,3 +55,4 @@ input[type='checkbox'] {
 h4 {
 	font-family: 'Pretendard-SemiBold';
 }
+</style>
