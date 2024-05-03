@@ -11,15 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/SortList")
-public class SortList extends HttpServlet {
+/* @WebServlet("/study/database/LoginList") */
+public class LoginList2 extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String sortType = request.getParameter("sort")==null ? "" : request.getParameter("sort");
-		
 		LoginDAO dao = new LoginDAO();
+
+		String sortKey = request.getParameter("sortKey");
 		
-		ArrayList<LoginVO> vos = dao.getListSorted(sortType);
+		ArrayList<LoginVO> vos = dao.getLoginList(sortKey, 0, 0);
+		
+		request.setAttribute("sortKey", sortKey);
 		request.setAttribute("vos", vos);
 		
 		String viewPage = "/study/database/loginMain.jsp";

@@ -11,8 +11,9 @@
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">
+  	Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,6 +52,16 @@
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0430_web_xml/init/t03_init.jsp">초기값 확인(init)</a>
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0430_web_xml/lifeCycle/lifeCycle2.jsp">서블릿 생명주기</a>
 		      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/database/LoginList">데이터베이스 연습(회원메인방)</a>
+		    </div>
+		  </div>
+      	</li>
+      	<li class="nav-item">
+		  <div class="dropdown">
+		    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		      Study2
+		    </button>
+		    <div class="dropdown-menu">
+		      <a class="dropdown-item" href="${ctp}/study/password/passCheck.jsp">비밀번호 암호화</a>
 		    </div>
 		  </div>
       	</li>

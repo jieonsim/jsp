@@ -71,7 +71,7 @@
                 	<label for="address" class="col-sm-3 col-form-label">주소</label>
                     <div class="col-sm-6">
                         <input type="button" class="btn btn-custom form-control" name="address" id="address"
-                            value="주소 검색" />
+                            value="주소 검색" /><i class="ph ph-magnifying-glass"></i>
                     </div>
                 </div>
                 <hr>

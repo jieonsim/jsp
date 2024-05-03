@@ -90,11 +90,13 @@ public class LoginDAO {
 	}
 
 	// 전체 회원 정보 검색
-	public ArrayList<LoginVO> getLoginList() {
+	public ArrayList<LoginVO> getLoginList(String sortKey, int startIndexNo, int pageSize) {
 		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
 		try {
-			sql = "select * from hoewon order by name";
+			sql = "select * from hoewon order by " + sortKey + " limit ?, ?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startIndexNo);
+			pstmt.setInt(2, pageSize);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				vo = new LoginVO();
@@ -162,7 +164,7 @@ public class LoginDAO {
 		return vos;
 	}
 
-	// 회원 메인 방에서 이름으로 개별 조회
+	// 회원 이름으로 개별 조회
 	public ArrayList<LoginVO> getLoginSearch(String name) {
 		ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
 		try {
@@ -249,45 +251,34 @@ public class LoginDAO {
 		}
 	}
 
-	// 회원메인방의 회원 리스트 정렬 순서 선택
-	public ArrayList<LoginVO> getListSorted(String sortType) {
-	    ArrayList<LoginVO> vos = new ArrayList<LoginVO>();
-	    try {
-	    	sql = sortListCommonSqlQuery(sortType); 
-	        pstmt = conn.prepareStatement(sql);
-	        rs = pstmt.executeQuery();
-	        while (rs.next()) {
-	            LoginVO vo = new LoginVO();
-	            vo.setIdx(rs.getInt("idx"));
-	            vo.setMid(rs.getString("mid"));
-	            vo.setPwd(rs.getString("pwd"));
-	            vo.setName(rs.getString("name"));
-	            vo.setAge(rs.getInt("age"));
-	            vo.setGender(rs.getString("gender"));
-	            vo.setAddress(rs.getString("address"));
-	            vos.add(vo);
-	        }
-	    } catch (SQLException e) {
-	        System.out.println("SQL 오류 : " + e.getMessage());
-	    } finally {
-	        rsClose();
-	    }
-	    return vos;
-	}
-	
-	// 정렬 순서 선택을 위한 sql 공통 쿼리 + order by 필드명 desc or 생략
-	private String sortListCommonSqlQuery(String sortType) {
-	    String baseSql = "SELECT * FROM hoewon ";
-	    switch (sortType) {
-	        case "latest": return baseSql + "ORDER BY idx DESC";
-	        case "oldest": return baseSql + "ORDER BY idx";
-	        case "midDesc": return baseSql + "ORDER BY mid DESC";
-	        case "midAsc": return baseSql + "ORDER BY mid";
-	        case "nameDesc": return baseSql + "ORDER BY name DESC";
-	        case "nameAsc": return baseSql + "ORDER BY name";
-	        case "ageDesc": return baseSql + "ORDER BY age DESC";
-	        case "ageAsc": return baseSql + "ORDER BY age";
-	        default: return baseSql;
-	    }
+	// 전체 회원 정보 검색에서 정렬선택
+	/*
+	 * public ArrayList<LoginVO> getLoginList(String sortKey) { ArrayList<LoginVO>
+	 * vos = new ArrayList<LoginVO>(); try { sql = "select * from hoewon order by "
+	 * + sortKey; pstmt = conn.prepareStatement(sql); rs = pstmt.executeQuery();
+	 * 
+	 * while(rs.next()) { vo = new LoginVO(); vo.setIdx(rs.getInt("idx"));
+	 * vo.setMid(rs.getString("mid")); vo.setPwd(rs.getString("pwd"));
+	 * vo.setName(rs.getString("name")); vo.setAge(rs.getInt("age"));
+	 * vo.setGender(rs.getString("gender")); vo.setAddress(rs.getString("address"));
+	 * vos.add(vo); } } catch (SQLException e) { System.out.println("SQL 오류 : " +
+	 * e.getMessage()); } finally { rsClose(); } return vos; }
+	 */
+
+	// 전체 회원 건 수를 구한다.
+	public int getTotRecCnt() {
+		int totRecCnt = 0;
+		try {
+			sql = "select count(*) as cnt from hoewon";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			rs.next();
+			totRecCnt = rs.getInt("cnt");
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+		return totRecCnt;
 	}
 }

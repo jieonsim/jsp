@@ -34,15 +34,6 @@
                         </div>
                     </div>
                 </div>
-<%--                 <div class="form-group row">
-                    <div class="col-sm-10 offset-sm-2 text-right mb-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="true"
-                                name="rememberId" <%=(!mid.isEmpty() ? "checked" : "")%>>
-                            <label class="form-check-label" for="rememberId" id="rememberId">아이디 저장</label>
-                        </div>
-                    </div>
-                </div> --%>
                 <div class="col pb-1">
                     <a href="#" class="link-small">아이디 찾기</a>
                     <span id="divisionLine">I</span>

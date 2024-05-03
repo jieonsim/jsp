@@ -61,12 +61,14 @@ public class GuestDAO {
 		pstmtClose();
 	}
 
-	// 방명록 전체 자료 리스트 처리
-	public ArrayList<GuestVO> getGuestList() {
+	// 방명록 전체 자료 리스트 처리 (limit ?,? 첫번째 물음표 인덱스부터 두번째 물음표 인덱스까지 개수가져오기)
+	public ArrayList<GuestVO> getGuestList(int startIndexNo, int pageSize) {
 		ArrayList<GuestVO> vos = new ArrayList<GuestVO>();
 		try {
-			sql = "select * from guest order by idx desc";
+			sql = "select * from guest order by idx desc limit ?, ?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startIndexNo);
+			pstmt.setInt(2, pageSize);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				vo = new GuestVO();
@@ -121,5 +123,22 @@ public class GuestDAO {
 			pstmtClose();
 		}
 		return res;
+	}
+
+	// 방명록 글의 총 건수 구하기(페이징 처리를 위한 토탈 레코드 건 수)
+	public int getTotRecCnt() {
+		int totRecCnt = 0;
+		try {
+			sql = "select count(*) as cnt from guest";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			rs.next();
+			totRecCnt = rs.getInt("cnt");
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+		return totRecCnt;
 	}
 }
