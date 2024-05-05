@@ -21,6 +21,7 @@
 			        <div class="col-sm-6">
 			            <input type="text" class="form-control" id="id" name="id"
 			                placeholder="아이디를 입력해주세요." autofocus required />
+			            <span>6자리 이상 16자 이하의 영문 혹은 영문과 숫자를 조합</span>
 			        </div>
 			        <div class="col-sm-3">
 			            <button type="submit" class="btn btn-custom form-control" id="idDuplicated">중복확인</button>
@@ -31,6 +32,7 @@
                     <div class="col-sm-6">
                         <input type="password" class="form-control" name="password"
                             placeholder="비밀번호를 입력해주세요." required />
+                        <span>최소 10자리 이상, 영문/숫자/특수문자 중 2개 이상 조합</span>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -67,6 +69,7 @@
 			            <button type="submit" class="btn btn-custom form-control" id="phoneDuplicated">중복확인</button>
 			        </div>
                 </div>
+                <!--  
                 <div class="form-group row">
                 	<label for="address" class="col-sm-3 col-form-label">주소</label>
                     <div class="col-sm-6">
@@ -74,24 +77,8 @@
                             value="주소 검색" /><i class="ph ph-magnifying-glass"></i>
                     </div>
                 </div>
+                -->
                 <hr>
-                <div class="form-group">
-                	<h4 class="text-left">관심 지역 설정</h4>
-                	<hr>
-					<label for="mountain" class="text-left form-label">상위 지역 설정</label>
-					<select name="mountain" class="form-control" size="5" multiple>
-						<option>백두산</option>
-						<option>한라산</option>
-						<option>태백산</option>
-						<option>속리산</option>
-						<option>소백산</option>
-						<option>금강산</option>
-						<option>우암산</option>
-						<option>대둔산</option>
-						<option>보문산</option>
-					</select>					
-                	<h5 class="text-left">하위 지역 설정</h5>
-                </div>
                 <div class="form-group row text-center">
                 	<div class="col-sm-3"></div>
                     <div class="col-sm-6 mt-3">

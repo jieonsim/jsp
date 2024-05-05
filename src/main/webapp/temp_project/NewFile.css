@@ -1,1 +1,9 @@
 @charset "UTF-8";
+
+head {
+	background-color: black;
+	color:lightcoral;
+	cursor: pointer;
+	text-align: left;
+	align-items: start;
+}

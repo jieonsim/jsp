@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+h4 {
+	font-family: 'Pretendard-SemiBold';
+}
+
 .login-container {
 	max-width: 400px;
 	margin: auto;
@@ -11,6 +22,11 @@
 	border-radius: 0;
 }
 
+.form-control:focus {
+	border-color: black;
+	box-shadow: none;
+}
+
 #divisionLine {
 	font-size: small;
 	color: gray;
@@ -20,6 +36,11 @@
 	font-size: small;
 	color: gray;
 	text-decoration: none;
+}
+
+.link-small:hover {
+	text-decoration: none;
+	color: gray;
 }
 
 #logIn {
@@ -43,14 +64,4 @@ input[type='checkbox'] {
     accent-color: black;
 }
 
-@font-face {
-    font-family: 'Pretendard-SemiBold';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
-
-h4 {
-	font-family: 'Pretendard-SemiBold';
-}
 </style>

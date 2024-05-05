@@ -18,12 +18,12 @@
 	font-family: ClimateCrisisKR-1979;
 	font-size: 30px;
 	color: black;
+	cursor: default;
 }
 
 .header-link {
 	font-family: 'Manrope', sans-serif;
 	font-size: 20px;
-	/* margin-left: 20px; */
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -40,12 +40,11 @@
     vertical-align: middle;
 }
 
-/* .search-input {
-	border: 1px solid black;
-	border-radius: 25px;
-	padding: 10px 40px 10px 20px;
-	width: 400px;
-} */
+.header-link:not(#localLens):hover {
+    background-color: black;
+    color: white;
+    transition: color 0.3s, background-color 0.3s;
+}
 
 .search-input {
     border: 1px solid black;
@@ -70,15 +69,4 @@
 	background: none;
 	cursor: pointer;
 }
-
-/* .dropdown:hover .dropdown-menu {
-        display: block;
-}
-
-.dropdown-menu {
-	font-family: 'Pretendard-Light';
-  	font-size: 14px;
-	min-width: 10px;
-}
- */
 </style>

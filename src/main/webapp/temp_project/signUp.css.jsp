@@ -22,6 +22,11 @@ h3 {
 	border-radius: 0;
 }
 
+.form-control:focus {
+	border-color: black;
+	box-shadow: none;
+}
+
 label {
 	text-align: left;
 }
@@ -44,6 +49,15 @@ label {
 	background-color: black;
 	border: none;
 	border-radius: 0;
+	height: 50px;
+}
+
+
+.signUp-form .form-group span {
+    color: lightcoral;
+    font-size: 12px;
+    text-align: left; /* Add this to align text to the left */
+    display: block; /* Makes span behave like a block element, allowing text-align to work */
 }
 
 </style>
