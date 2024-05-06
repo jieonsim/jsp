@@ -14,8 +14,9 @@
 	font-style: normal;
 }
 
+
 #localLens {
-	font-family: ClimateCrisisKR-1979;
+	font-family: 'ClimateCrisisKR-1979';
 	font-size: 30px;
 	color: black;
 	cursor: default;
@@ -36,22 +37,22 @@
 }
 
 .header-link .ph {
-    font-size: 18px;
-    vertical-align: middle;
+	font-size: 18px;
+	vertical-align: middle;
 }
 
 .header-link:not(#localLens):hover {
-    background-color: black;
-    color: white;
-    transition: color 0.3s, background-color 0.3s;
+	background-color: black;
+	color: white;
+	transition: color 0.3s, background-color 0.3s;
 }
 
 .search-input {
-    border: 1px solid black;
-    border-radius: 25px;
-    padding: 10px 40px 10px 20px;
-    width: 400px;
-    outline: none;
+	border: 1px solid black;
+	border-radius: 25px;
+	padding: 10px 40px 10px 20px;
+	width: 400px;
+	outline: none;
 }
 
 /* .search-input:focus {
@@ -59,7 +60,6 @@
     border-color: inherit;
     box-shadow: none;
 } */
-
 .search-btn {
 	position: absolute;
 	right: 30px;

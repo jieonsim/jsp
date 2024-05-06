@@ -15,8 +15,8 @@
 					<i class="ph ph-user"></i>
 			    	<span class="ml-2">sign up</span>
 			    	<!--
-			    	<i class="ph-fill ph-user"></i>
 					<i class="ph ph-user"></i>
+			    	<i class="ph-fill ph-user"></i>
 			    	<span class="ml-2 mr-4">admin</span>
 			    	-->
 				</a>
