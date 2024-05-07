@@ -65,6 +65,7 @@
 		      <a class="dropdown-item" href="${ctp}/mapping/test2.do">확장자 매핑연습</a>
 		      <a class="dropdown-item" href="${ctp}/mapping/test3.do3">확장자 매핑연습3</a>
 		      <a class="dropdown-item" href="${ctp}/mapping/test4.do4">확장자 매핑연습4</a>
+		      <a class="dropdown-item" href="${ctp}/mapping/test5.do5">확장자 매핑연습5(숙제)</a>
 		    </div>
 		  </div>
       	</li>
