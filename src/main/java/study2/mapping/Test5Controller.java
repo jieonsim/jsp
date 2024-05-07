@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Test5Controller extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Test5Interface command = null;
 		String viewPage = "/WEB-INF/study2/mapping/";
 		
 		String uri = request.getRequestURI();
@@ -23,21 +24,53 @@ public class Test5Controller extends HttpServlet {
 			viewPage += "test5.jsp";
 		}
 		else if(com.equals("input")) {
-			viewPage += "t5input.jsp";
+			viewPage += "test5input.jsp";
+		}
+		else if(com.equals("inputOk")) {
+			command = new Test5InputCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("update")) {
-			viewPage += "t5update.jsp";
+			command = new Test5UpdateCommand();
+			command.execute(request, response);
+			viewPage += "test5update.jsp";
+		}
+		else if(com.equals("updateOk")) {
+			command = new Test5UpdateOkCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("delete")) {
-			viewPage += "t5delete.jsp";
+			command = new Test5DeleteCommand();
+			command.execute(request, response);
+			viewPage += "test5delete.jsp";
+		}
+		else if(com.equals("deleteOk")) {
+			command = new Test5DeleteOkCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("search")) {
-			viewPage += "t5search.jsp";
+			command = new Test5SearchCommand();
+			command.execute(request, response);
+			viewPage += "test5search.jsp";
+		}
+		else if(com.equals("searchOk")) {
+			command = new Test5SearchOkCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/common/message.jsp";
 		}
 		else if(com.equals("list")) {
-			viewPage += "t5list.jsp";
+			command = new Test5ListCommand();
+			command.execute(request, response);
+			viewPage += "test5list.jsp";
 		}
-		
+		else if(com.equals("listOk")) {
+			command = new Test5ListOkCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/common/message.jsp";
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}

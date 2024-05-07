@@ -12,12 +12,9 @@
 <script>
 	'use strict';
 	
-	let id = document.getElementById("userManagement");
-	val select = id.options[id.selectedIndex].value;
-	
 	function userManagementOptionSelect() {
-		
-		
+		let userManagement = document.getElementById("userManagement").value;
+		location.href = userManagement + ".do5";
 	}
 </script>
 <%@ include file="/include/bs4.jsp"%>

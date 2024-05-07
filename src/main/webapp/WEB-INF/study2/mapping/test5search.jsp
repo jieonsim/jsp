@@ -7,14 +7,21 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Insert</title>
+	<title>test5search.jsp</title>
 	<%@ include file = "/include/bs4.jsp" %>
 </head>
 <body>
 <jsp:include page="/include/header.jsp" />
 <jsp:include page="/include/nav.jsp" />
 <div class="container mt-5">
-	
+	<h3>회원 검색 페이지</h3>
+		<div>
+			<input type="text" placeholder="검색할 아이디를 입력하세요." />
+		</div>
+		<div>
+			<a href="searchOk.do5" class="btn btn-success btn-sm">검색하기</a>
+			<a href="test5.do5" class="btn btn-primary btn-sm">돌아가기</a>
+		</div>
 </div>
 <jsp:include page="/include/footer.jsp" />
 </body>
