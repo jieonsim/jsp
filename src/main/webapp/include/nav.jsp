@@ -11,8 +11,8 @@
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,6 +61,10 @@
 		    </button>
 		    <div class="dropdown-menu">
 		      <a class="dropdown-item" href="${ctp}/study/password/passCheck.jsp">비밀번호 암호화</a>
+		      <a class="dropdown-item" href="${ctp}/mapping/test1">디렉토리 매핑연습</a>
+		      <a class="dropdown-item" href="${ctp}/mapping/test2.do">확장자 매핑연습</a>
+		      <a class="dropdown-item" href="${ctp}/mapping/test3.do3">확장자 매핑연습3</a>
+		      <a class="dropdown-item" href="${ctp}/mapping/test4.do4">확장자 매핑연습4</a>
 		    </div>
 		  </div>
       	</li>
