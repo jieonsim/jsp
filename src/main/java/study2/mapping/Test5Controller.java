@@ -29,7 +29,7 @@ public class Test5Controller extends HttpServlet {
 		else if(com.equals("inputOk")) {
 			command = new Test5InputCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/common/message.jsp";
+			viewPage = "/include/message.jsp";
 		}
 		else if(com.equals("update")) {
 			command = new Test5UpdateCommand();
@@ -39,7 +39,7 @@ public class Test5Controller extends HttpServlet {
 		else if(com.equals("updateOk")) {
 			command = new Test5UpdateOkCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/common/message.jsp";
+			viewPage = "/include/message.jsp";
 		}
 		else if(com.equals("delete")) {
 			command = new Test5DeleteCommand();
@@ -49,7 +49,7 @@ public class Test5Controller extends HttpServlet {
 		else if(com.equals("deleteOk")) {
 			command = new Test5DeleteOkCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/common/message.jsp";
+			viewPage = "/include/message.jsp";
 		}
 		else if(com.equals("search")) {
 			command = new Test5SearchCommand();
@@ -59,7 +59,7 @@ public class Test5Controller extends HttpServlet {
 		else if(com.equals("searchOk")) {
 			command = new Test5SearchOkCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/common/message.jsp";
+			viewPage = "/include/message.jsp";
 		}
 		else if(com.equals("list")) {
 			command = new Test5ListCommand();
@@ -69,7 +69,7 @@ public class Test5Controller extends HttpServlet {
 		else if(com.equals("listOk")) {
 			command = new Test5ListOkCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/common/message.jsp";
+			viewPage = "/include/message.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

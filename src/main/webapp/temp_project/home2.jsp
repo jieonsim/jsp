@@ -33,7 +33,6 @@ h3, p {
 	text-shadow: 2px 2px 5px gray;
 }
 
-
 .carousel-caption {
     left: 5%;
     text-align: right;
@@ -41,6 +40,7 @@ h3, p {
     right: auto;
     padding:5px;
 }
+
 </style>
 </head>
 <body>

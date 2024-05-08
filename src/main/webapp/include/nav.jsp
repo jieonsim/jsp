@@ -11,8 +11,8 @@
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -66,6 +66,9 @@
 		      <a class="dropdown-item" href="${ctp}/mapping/test3.do3">확장자 매핑연습3</a>
 		      <a class="dropdown-item" href="${ctp}/mapping/test4.do4">확장자 매핑연습4</a>
 		      <a class="dropdown-item" href="${ctp}/mapping/test5.do5">확장자 매핑연습5(숙제)</a>
+		      <a class="dropdown-item" href="${ctp}/ajaxTest1.st">AJAX 연습(일반)</a>
+		      <a class="dropdown-item" href="${ctp}/ajaxTest2.st">AJAX 연습(응용)</a>
+		      <a class="dropdown-item" href="${ctp}/ajaxTest3.st">AJAX 연습(회원관리)</a>
 		    </div>
 		  </div>
       	</li>
