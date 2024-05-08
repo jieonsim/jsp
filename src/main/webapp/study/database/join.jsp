@@ -18,10 +18,22 @@
       <tr>
         <td colspan="2"><font size="5">회 원 가 입</font></td>
       </tr>
-      <tr>
+<!--       <tr>
         <th>아이디</th>
-        <td><input type="text" name="mid" placeholder="아이디를 입력해주세요." required class="form-control"/></td>
-      </tr>
+        <td>
+        	<input type="text" name="mid" placeholder="아이디를 입력해주세요." required class="form-control"/>
+        	<input type="button" value="중복체크" class="btn btn-sm btn-secondary"/>
+        </td>
+      </tr> -->
+      <tr>
+		  <th>아이디</th>
+		  <td>
+		    	<div class="input-group">
+		      	<input type="text" name="mid" placeholder="아이디를 입력해주세요." class="form-control" required autofocus/>
+		      	<input type="button" value="중복체크" class="btn btn-secondary"/>
+		    </div>
+		  </td>
+	</tr>
       <tr>
         <th>비밀번호</th>
         <td><input type="password" name="pwd" required class="form-control"/></td>
