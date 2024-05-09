@@ -37,7 +37,16 @@ label {
 	text-decoration: none;
 }
 
-#address, #idDuplicated, #emailDuplicated, #phoneDuplicated {
+/* 중복확인 되었을 때 비활성화 처리
+#address, #idDuplicated, #emailDuplicated {
+	background-color: #eee;
+	border: none;
+	color: lightgray;
+	border-radius: 0;
+}
+*/
+
+#address, #idDuplicated, #emailDuplicated {
 	background-color: white;
 	border: 1px solid black;
 	color: black;
@@ -50,6 +59,7 @@ label {
 	border: none;
 	border-radius: 0;
 	height: 50px;
+	font-size: 20px;
 }
 
 

@@ -62,22 +62,24 @@ h4 {
     <jsp:include page="nav.jsp" />
     <div class="container mt-5 pt-3">
         <div class="findingPassword-container">
-            <h4 class="mb-5">비밀번호 찾기</h4>
+            <h4 class="mb-5">비밀번호 재설정</h4>
             <form class="findingPassword-form" method="post" action="">
                 <div class="form-group row">
                     <div class="col">
-                    	<label for="name">아이디</label>
-                        <input type="text" class="form-control" name="id" 
-                        		placeholder="아이디를 입력해주세요." <%-- value="<%=id %>" --%> autofocus required />
-                        <span>가입 시 등록한 아이디를 입력해주세요.</span>
+                    	<label for="name">새 비밀번호 등록</label>
+                        <input type="password" class="form-control" name="password" 
+                        		placeholder="새 비밀번호를 입력해 주세요." <%-- value="<%=id %>" --%> autofocus required />
+                        <span>10자 이상 입력</span>
+                        <span>영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span>
+                        <span>동일한 숫자 3개 이상 연속 사용 불가</span>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col">
-                    	<label for="name">이메일</label>
-                        <input type="email" class="form-control" name="email"
-                            placeholder="이메일을 입력해주세요." required />
-                        <span>가입 시 등록한 이메일을 입력해주세요.</span>
+                    	<label for="name">새 비밀번호 확인</label>
+                        <input type="password" class="form-control" name="password"
+                            placeholder="새 비밀번호를 한 번 더 입력해 주세요." required />
+                        <span>동일한 비밀번호를 입력해주세요.</span>
                     </div>
                 </div>
                 <div class="form-group text-center">

@@ -33,7 +33,7 @@ h4 {
 }
 
 .link-small {
-	font-size: small;
+	font-size: 14px;
 	color: gray;
 	text-decoration: none;
 }
@@ -47,12 +47,16 @@ h4 {
 	color: white;
 	background-color: black;
 	border: none;
+	height: 50px;
+	font-size: 20px;
 }
 
 #signUp {
 	background-color: white;
 	border: 1px solid black;
 	color: black;
+	height: 50px;
+	font-size: 20px;
 }
 
 #rememberId {

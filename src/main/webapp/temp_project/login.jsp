@@ -17,13 +17,13 @@
             <form class="login-form" method="post" action="">
                 <div class="form-group row">
                     <div class="col">
-                        <input type="text" class="form-control" name="id" 
+                        <input type="text" class="form-control" name="id" id="id" 
                         		placeholder="아이디를 입력해주세요." <%-- value="<%=id %>" --%> autofocus required />
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col">
-                        <input type="password" class="form-control" name="password"
+                        <input type="password" class="form-control" name="password" id ="password"
                             placeholder="비밀번호를 입력해주세요." required />
                     </div>
                     <div class="col-sm-10 offset-sm-2 text-right mt-2 mb-2">

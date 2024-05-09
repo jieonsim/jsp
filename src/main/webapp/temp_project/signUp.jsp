@@ -13,7 +13,7 @@
     <jsp:include page="nav.jsp" />
     <div class="container pt-5">
         <div class="signUp-container">
-            <h3 class="pb-5">회원가입</h3>
+            <h3 class="mb-5">회원가입</h3>
             <hr>
             <form class="signUp-form pl-3 pr-3" method="post" action="">
                 <div class="form-group row">
@@ -49,7 +49,7 @@
                         <input type="text" class="form-control" name="nickname"
                             placeholder="닉네임을 입력해주세요." required />
                          <!-- <span>이미 사용 중인 닉네임입니다.</span> -->
-                         <span>2자 이상 15자 이하, 영문/숫자/마침표/언더바만 입력 가능</span>
+                         <span>15자 이하, 영문/숫자/마침표/언더바만 입력 가능</span>
                     </div>
                     <div class="col-sm-3">
 			            <button type="submit" class="btn btn-custom form-control" id="idDuplicated">중복확인</button>

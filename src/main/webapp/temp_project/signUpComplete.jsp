@@ -19,15 +19,19 @@
 	font-size: 25px;
 }
 
-#goToLogin {
-	background-color: black;
+#logIn {
+	font-size: 20px;
+	height: 50px;
 	color: white;
+	background-color: black;
+	border: none;
 	border-radius: 0;
+	width: 300px;
 }
 
-#goToLogin:focus {
-	border-color: black;
-	box-shadow: none;
+#ment {
+	color: gray;
+	font-size: 16px;
 }
 </style>
 </head>
@@ -36,9 +40,10 @@
 	<jsp:include page="nav.jsp" />
 	<div class="signUpComplete-container">
 		<i class="ph ph-seal-check" id="sealCheck"></i>
-		<h3 class="pt-3 mb-5">회원가입이 완료되었습니다!</h3>
+		<h4 class="pt-3 mb-2">회원가입이 완료되었습니다!</h4>
+		<div id="ment" class="mb-5">로그인 후 이용해 주세요.</div>
 		<div>
-			<button type="button" class="btn btn-lg btn-custom" id="goToLogin">로그인</button>
+			<button type="submit" class="btn btn-custom btn-lg" id="logIn">로그인</button>
 		</div>
 	</div>
 </body>
