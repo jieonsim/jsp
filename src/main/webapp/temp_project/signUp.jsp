@@ -21,7 +21,7 @@
 			        <div class="col-sm-6">
 			            <input type="text" class="form-control" id="id" name="id"
 			                placeholder="아이디를 입력해주세요." autofocus required />
-			            <span>6자리 이상 16자 이하의 영문 혹은 영문과 숫자를 조합</span>
+			            <span>6자 이상 16자 이하의 영문 혹은 영문과 숫자를 조합</span>
 			        </div>
 			        <div class="col-sm-3">
 			            <button type="submit" class="btn btn-custom form-control" id="idDuplicated">중복확인</button>
@@ -32,7 +32,7 @@
                     <div class="col-sm-6">
                         <input type="password" class="form-control" name="password"
                             placeholder="비밀번호를 입력해주세요." required />
-                        <span>최소 10자리 이상, 영문/숫자/특수문자 중 2개 이상 조합</span>
+                        <span>10자 이상, 영문/숫자/특수문자 중 2개 이상 조합</span>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -40,7 +40,20 @@
                     <div class="col-sm-6">
                         <input type="password" class="form-control" name="password"
                             placeholder="비밀번호를 한번 더 입력해주세요." required />
+                        <span>동일한 비밀번호를 입력</span>
                     </div>
+                </div>
+                <div class="form-group row">
+                	<label for="nickname" class="col-sm-3 col-form-label">닉네임</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="nickname"
+                            placeholder="닉네임을 입력해주세요." required />
+                         <!-- <span>이미 사용 중인 닉네임입니다.</span> -->
+                         <span>2자 이상 15자 이하, 영문/숫자/마침표/언더바만 입력 가능</span>
+                    </div>
+                    <div class="col-sm-3">
+			            <button type="submit" class="btn btn-custom form-control" id="idDuplicated">중복확인</button>
+			        </div>
                 </div>
                 <div class="form-group row">
                 	<label for="name" class="col-sm-3 col-form-label">이름</label>
@@ -59,6 +72,7 @@
 			            <button type="submit" class="btn btn-custom form-control" id="emailDuplicated">중복확인</button>
 			        </div>
                 </div>
+                <!--  
                 <div class="form-group row">
                 	<label for="phone" class="col-sm-3 col-form-label">휴대폰</label>
                     <div class="col-sm-6">
@@ -69,7 +83,6 @@
 			            <button type="submit" class="btn btn-custom form-control" id="phoneDuplicated">중복확인</button>
 			        </div>
                 </div>
-                <!--  
                 <div class="form-group row">
                 	<label for="address" class="col-sm-3 col-form-label">주소</label>
                     <div class="col-sm-6">

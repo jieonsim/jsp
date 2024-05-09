@@ -46,7 +46,6 @@ h3, p {
 <body>
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
-	<%-- <jsp:include page="nav2.jsp" /> --%>
 	<div class="container mt-5">
 		<div class="carousel-container">
 		<div class="row">

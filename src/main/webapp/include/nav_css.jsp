@@ -20,7 +20,7 @@
     font-weight: bolder;
 }
 
-#login, #logout {
+#login, #logout, #Join {
 	background-color: cornflowerblue;
 	color: white;
 	border-radius: 0;

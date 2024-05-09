@@ -38,7 +38,7 @@
 		<i class="ph ph-seal-check" id="sealCheck"></i>
 		<h3 class="pt-3 mb-5">회원가입이 완료되었습니다!</h3>
 		<div>
-			<button type="button" class="btn btn-lg btn-custom" id="goToLogin">로그인 하러가기</button>
+			<button type="button" class="btn btn-lg btn-custom" id="goToLogin">로그인</button>
 		</div>
 	</div>
 </body>

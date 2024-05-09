@@ -55,7 +55,7 @@ label {
 
 .signUp-form .form-group span {
     color: lightcoral;
-    font-size: 12px;
+    font-size: 13px;
     text-align: left; /* Add this to align text to the left */
     display: block; /* Makes span behave like a block element, allowing text-align to work */
 }

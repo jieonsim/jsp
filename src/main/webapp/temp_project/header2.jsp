@@ -5,9 +5,13 @@
 		<div class="row align-items-center justify-content-between">
 			<div class="col-auto">
 				<a href="#" class="header-link" id="localLens">Local Lens</a>
-			</div>	
+			</div>
+			<div class="col-auto d-flex align-items-center">
+				<a href="#" class="header-link" id="today">TODAY</a>
+				<span class="header-link" id="divisionLine">|</span>
+				<a href="#" class="header-link" id="forYou">FOR YOU</a>
+			</div>			
             <div class="col-auto position-relative">
-                <input class="search-input" type="search" placeholder="find a lil spot? use me!" aria-label="Search">
                 <button class="search-btn" type="submit"><i class="ph ph-magnifying-glass"></i></button>
             </div>
 			<div class="col-auto d-flex align-items-center">
