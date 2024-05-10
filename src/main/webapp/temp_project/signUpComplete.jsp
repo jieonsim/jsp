@@ -30,7 +30,7 @@
 }
 
 #ment {
-	color: gray;
+	color: dimgray;
 	font-size: 16px;
 }
 </style>
@@ -46,5 +46,6 @@
 			<button type="submit" class="btn btn-custom btn-lg" id="logIn">로그인</button>
 		</div>
 	</div>
+	<jsp:include page="footer.jsp" />	
 </body>
 </html>

@@ -12,8 +12,8 @@
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,15 +26,15 @@
 	        <li class="nav-item">
 	        <a class="nav-link custom-nav-link" href="#">Board</a>
 	      	</li>
+	     </c:if>
+	      	<c:if test="${level <= 4 && (level > 1 || level == 0)}">
 	      	<li class="nav-item">
 	        <a class="nav-link custom-nav-link" href="#">PDS</a>
 	        <!-- posting data system (자료실)  -->
 	      	</li>
 	      	<li class="nav-item">
 			  <div class="dropdown">
-			    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-			      Study1
-			    </button>
+			    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Study1</button>
 			    <div class="dropdown-menu">
 			      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0426/t01.jsp">서버 환경</a>
 			      <a class="dropdown-item" href="<%=request.getContextPath()%>/study/0426/t02_0.jsp">성적 계산</a>
@@ -57,9 +57,7 @@
 	      	</li>
 	      	<li class="nav-item">
 			  <div class="dropdown">
-			    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-			      Study2
-			    </button>
+			    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Study2</button>
 			    <div class="dropdown-menu">
 			      <a class="dropdown-item" href="${ctp}/study/password/passCheck.jsp">비밀번호 암호화</a>
 			      <a class="dropdown-item" href="${ctp}/mapping/test1">디렉토리 매핑연습</a>
@@ -76,6 +74,26 @@
 			  </div>
 	      	</li>
         </c:if>
+        <c:if test="${level <= 4}">
+	      	<li class="nav-item">
+			  <div class="dropdown">
+			    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">mypage</button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" href="MemberMain.mem">회원메인방</a>
+			      <c:if test="${level <= 4 && (level > 1 || level == 0)}">
+			      	<a class="dropdown-item" href="#">일정관리</a>
+			      	<a class="dropdown-item" href="#">메시지관리</a>
+				    <a class="dropdown-item" href="MemberList.mem">회원리스트</a>
+			      </c:if>
+			      <a class="dropdown-item" href="MemberPwdCheck.mem">회원정보수정</a>
+			      <a class="dropdown-item" href="MemberDelete.mem">회원탈퇴</a>
+			      <c:if test="${level == 0}">
+			      <a class="dropdown-item" href="#">관리자메뉴</a>
+			      </c:if>
+			    </div>
+			  </div>
+	      	</li>
+	   </c:if>
       </ul>
       <ul class="navbar-nav ml-auto">
           <li class="nav-item">

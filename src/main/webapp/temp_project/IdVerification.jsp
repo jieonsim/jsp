@@ -28,7 +28,7 @@
 }
 
 #ment, #dateOfSignup {
-	color: gray;
+	color: dimgray;
 	font-size: 16px;
 }
 
@@ -46,7 +46,7 @@
 	<jsp:include page="nav.jsp" />
 		<div class="idVerification-container">
 			<i class="ph ph-seal-check" id="sealCheck"></i>
-			<h4 class="pt-3 mb-2">고객님의 로컬로그 계정을 찾았습니다.</h4>
+			<h4 class="pt-3 mb-2">회원님의 로컬로그 계정을 찾았습니다.</h4>
 			<div id="ment" class="mb-5">아이디 확인 후 로그인해 주세요.</div>
 			<h3>zie***</h3>
 			<div id="dateOfSignup" class="mb-5">가입일 2024.05.09</div>

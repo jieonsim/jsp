@@ -28,7 +28,7 @@
 }
 
 #ment {
-	color: gray;
+	color: dimgray;
 	font-size: 16px;
 }
 

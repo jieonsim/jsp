@@ -18,12 +18,17 @@
 	<hr>
 	<!-- 실시간 채팅방(DB) -->
 	<hr>
-	<div>
-  		<p>현재 <font color="blue"><b>${sNickName}</b></font> 님이 로그인 중이십니다.</p>
-		<p>총 방문 횟수 : _ 회</p>
-		<p>오늘 방문 횟수 : _ 회</p>
-		<p>총 보유 포인트 : _ 점</p>
-	</div>
+  <div class="row">
+    <div class="col">
+	  	<p>현재 <b><font color="blue">${sNickName}</font>(<font color="red">${strLevel}</font>)</b> 님이 로그인 중이십니다.</p>
+	  	<p>총 방문횟수 : <b>${mVo.visitCnt}</b> 회</p>
+	  	<p>오늘 방문횟수 : <b>${mVo.todayCnt}</b> 회</p>
+	  	<p>총 보유 포인트 : <b>${mVo.point}</b> 점</p>
+  	</div>
+    <div class="col">
+      <p><img src="${ctp}/images/member/${mVo.photo}" width="200px"/></p>
+  	</div>
+  </div>
 	<hr>
 	<div>
 		<h5>활동 내역</h5>
