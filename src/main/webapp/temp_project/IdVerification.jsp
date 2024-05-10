@@ -25,6 +25,7 @@
 	border: none;
 	border-radius: 0;
 	width: 300px;
+	box-shadow: none;
 }
 
 #ment, #dateOfSignup {

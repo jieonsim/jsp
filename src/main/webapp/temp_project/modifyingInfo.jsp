@@ -56,13 +56,14 @@ h4 {
 	border-color: black;
 	box-shadow: none;
 }
+
 </style>
 <body>
     <jsp:include page="header.jsp" />
     <jsp:include page="nav.jsp" />
     <div class="container mt-5 pt-3">
         <div class="findingPassword-container">
-            <h4 class="mb-3">프로필 수정</h4>
+            <!-- <h4 class="mb-3">프로필 수정</h4> -->
             <h4 class="mb-3">내 정보 수정</h4>
             <!-- <div class="mb-1 text-center">비밀번호 재확인</div> -->
             <div style="font-size: 16px; color: dimgray; text-align: center;" class="mb-5">회원님의 정보를 안전하게 보호하기 위해<br>비밀번호를 다시 한번 확인해주세요.</div>

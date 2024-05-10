@@ -14,12 +14,33 @@
 	font-style: normal;
 }
 
-
 #localLens {
 	font-family: 'ClimateCrisisKR-1979';
 	font-size: 30px;
 	color: black;
 	cursor: default;
+}
+
+.dropdown {
+	font-family: 'Manrope', sans-serif;
+}
+
+#user {
+	background-color: white;
+	box-shadow: none; 
+	border: none; 
+	color: black;
+}
+
+.dropdown-menu {
+	font-family: 'Pretendard-Regular';
+	border-radius: 0;
+	min-width: 80%;
+}
+
+.dropdown-menu .dropdown-item:active {
+    background-color: transparent; 
+    color: black; 
 }
 
 .header-link {

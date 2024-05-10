@@ -27,6 +27,7 @@
 	border: none;
 	border-radius: 0;
 	width: 300px;
+	box-shadow: none;
 }
 
 #ment {
@@ -40,12 +41,11 @@
 	<jsp:include page="nav.jsp" />
 	<div class="signUpComplete-container">
 		<i class="ph ph-seal-check" id="sealCheck"></i>
-		<h4 class="pt-3 mb-2">회원가입이 완료되었습니다!</h4>
+		<h4 class="pt-3 mb-2">회원가입이 완료되었습니다.</h4>
 		<div id="ment" class="mb-5">로그인 후 이용해 주세요.</div>
 		<div>
 			<button type="submit" class="btn btn-custom btn-lg" id="logIn">로그인</button>
 		</div>
 	</div>
-	<jsp:include page="footer.jsp" />	
 </body>
 </html>
