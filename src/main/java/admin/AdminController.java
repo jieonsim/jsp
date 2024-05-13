@@ -30,7 +30,7 @@ public class AdminController extends HttpServlet {
 		int level = session.getAttribute("sLevel")==null ? 999 : (int) session.getAttribute("sLevel");
 		
 		if(level > 0) {
-			request.setAttribute("message", "로그인후 사용하세요");
+			request.setAttribute("message", "로그인 후 사용하세요");
 			request.setAttribute("url", request.getContextPath()+"/MemberLogin.mem");
 			viewPage = "/include/message.jsp";
 		}

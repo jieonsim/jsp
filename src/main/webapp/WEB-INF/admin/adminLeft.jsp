@@ -9,6 +9,20 @@
 	<title>adminLeft.jsp</title>
 	<jsp:include page="/include/bs4.jsp" />
 </head>
+<style>
+a {
+	color: black;
+}
+a:hover {
+  text-decoration-line: none;
+  color: cornflowerblue;
+  font-weight: bolder;
+}
+
+h5 {
+  font-weight: bold;
+}
+</style>
 <body>
 <div class="text-center mt-5">
 	<h5><a href="AdminMain.ad" target="_top">관리자 메뉴</a></h5>

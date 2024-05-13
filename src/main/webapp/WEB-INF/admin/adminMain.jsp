@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>adminMain.jsp</title>
-  <frameset cols="130px, *">
+  <frameset cols="150px, *">
     <frame src="AdminLeft.ad" name="adminLeft" frameborder="0" />
     <frame src="AdminContent.ad" name="adminContent" frameborder="0" />
   </frameset>
