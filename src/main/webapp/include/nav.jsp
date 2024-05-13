@@ -12,8 +12,8 @@
 <nav class="navbar navbar-expand-sm bg-white navbar-white" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
   <div class="container">
     <%-- <a class="navbar-brand" href="<%=request.getContextPath()%>/">Home</a> --%>
-  	<!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a> -->
-    <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a>
+  	<a class="navbar-brand custom-nav-navbar" href="http://192.168.50.61:9090/javaclass/main">Home</a>
+    <!-- <a class="navbar-brand custom-nav-navbar" href="http://192.168.0.10:9090/javaclass/main">Home</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,7 +24,7 @@
         </li>
         <c:if test="${level <= 4}">
 	        <li class="nav-item">
-	        <a class="nav-link custom-nav-link" href="#">Board</a>
+	        <a class="nav-link custom-nav-link" href="BoardList.bo">Board</a>
 	      	</li>
 	     </c:if>
 	      	<c:if test="${level <= 4 && (level > 1 || level == 0)}">
@@ -88,7 +88,7 @@
 			      <a class="dropdown-item" href="MemberPwdCheck.mem">회원정보수정</a>
 			      <a class="dropdown-item" href="MemberDelete.mem">회원탈퇴</a>
 			      <c:if test="${level == 0}">
-			      <a class="dropdown-item" href="#">관리자메뉴</a>
+			      <a class="dropdown-item" href="AdminMain.ad">관리자메뉴</a>
 			      </c:if>
 			    </div>
 			  </div>

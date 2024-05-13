@@ -27,17 +27,15 @@ h4 {
 }
 
 .findingPassword-form .form-group label {
-    text-align: left; /* Add this to align text to the left */
+    text-align: left;
     display: block; 
-    /* Makes span behave like a block element, allowing text-align to work */
 }
 
 .findingPassword-form .form-group span {
     color: lightcoral;
     font-size: 13px;
-    text-align: left; /* Add this to align text to the left */
+    text-align: left;
     display: block; 
-    /* Makes span behave like a block element, allowing text-align to work */
 }
 
 #confirm {
@@ -57,16 +55,21 @@ h4 {
 	box-shadow: none;
 }
 
+#ment {
+	font-size: 16px; 
+	color: dimgray;
+	text-align: center;
+}
+
 </style>
 <body>
     <jsp:include page="header.jsp" />
     <jsp:include page="nav.jsp" />
     <div class="container mt-5 pt-3">
         <div class="findingPassword-container">
-            <!-- <h4 class="mb-3">프로필 수정</h4> -->
             <h4 class="mb-3">내 정보 수정</h4>
             <!-- <div class="mb-1 text-center">비밀번호 재확인</div> -->
-            <div style="font-size: 16px; color: dimgray; text-align: center;" class="mb-5">회원님의 정보를 안전하게 보호하기 위해<br>비밀번호를 다시 한번 확인해주세요.</div>
+            <div class="mb-5" id="ment">회원님의 정보를 안전하게 보호하기 위해<br>비밀번호를 다시 한번 확인해주세요.</div>
             <form class="findingPassword-form" method="post" action="">
                 <div class="form-group row">
                     <div class="col">

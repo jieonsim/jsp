@@ -21,7 +21,7 @@
   <div>아이디 : ${vo.mid}</div>
   <div>닉네임 : ${vo.nickName}</div>
   <div>성명 : ${vo.name}</div>
-  <div>Email address: ${vo.email}</div>
+  <div>이메일 : ${vo.email}</div>
   <div>성별 : ${vo.gender}</div>
   <div>생일 : ${vo.birthday}</div>
   <div>전화번호 : ${vo.tel}</div>

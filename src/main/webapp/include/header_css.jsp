@@ -18,7 +18,7 @@
 	font-style: normal;
 }
 
-#title {
+#titleLogo {
 	font-family: PyeongChangPeace-Bold;
 }
 </style>
