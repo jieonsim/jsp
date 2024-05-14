@@ -14,6 +14,7 @@
 	max-width: 700px;
 	margin: auto;
 	padding: 20px;
+	margin-top: 100px;
 }
 #recordFirstCuration {
 	font-size: 20px;
@@ -49,7 +50,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<jsp:include page="nav.jsp" />
-	<div class="container mt-5">
+	<div class="container">
 		<div class="archive-container">
 			<div class="row mb-5">
 				<div class="col-2">

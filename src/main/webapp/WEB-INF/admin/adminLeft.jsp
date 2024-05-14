@@ -36,7 +36,7 @@ h5 {
 	<hr>
 	<div>
 		<h5>게시판</h5>
-		<div><a href="BoardList.bo" target="adminContent">게시판 리스트</a></div>
+		<div><a href="BoardList.ad" target="adminContent">게시판 리스트</a></div>
 	</div>
 	<hr>
 	<div>

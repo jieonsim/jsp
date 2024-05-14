@@ -21,3 +21,17 @@ desc board;
 insert into board values(default, 'admin', '관리맨', '게시판 서비스를 시작합니다.', '하이루 게시판 굿굿', default, '192.168.50.61', default, default, default);
 
 select * from board;
+select * from board where idx = 9; /*현재글*/
+select idx, title from board where idx > 9 order by idx limit 1; /*다음글*/
+select idx, title from board where idx < 9 order by idx desc limit 1; /*이전글*/
+
+-- 시간으로 비교하여 필드가 값 저장하기
+select *, timestampdiff(hour, wDate, now()) as hour_diff from board;
+select *, timestampdiff(hour, wDate, now()) as hour_diff from board order by idx desc;
+
+-- 날짜로 비교해서 필드에 값 저장하기
+select *, datediff(wDate, now()) as date_diff from board;
+select *, datediff(wDate, now()) as date_diff from board order by idx desc;
+
+
+

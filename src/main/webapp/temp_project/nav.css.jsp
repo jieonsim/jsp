@@ -87,6 +87,29 @@
 .nav-link.active i.ph-fill {
     display: inline !important;
 }
+
+.swal2-confirm {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    font-weight: bold !important;
+	font-size: 18px !important;
+	margin: 0 !important;
+}
+.swal2-confirm:hover {
+    background-color: none !important;
+}
+
+.custom-swal-popup {
+    width: 350px !important;
+    padding-top: 20px !important;
+}
+
+.custom-swal-text {
+	font-size: 16px !important;
+	/* font-weight: bold !important; */
+}
 </style>
 <!--
 <style>
