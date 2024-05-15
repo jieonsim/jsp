@@ -59,6 +59,7 @@ h4 {
 
 #case {
 	font-family:'Pretendard-SemiBold';
+	margin-bottom: 10px;
 }
 </style>
 <body>
@@ -92,7 +93,7 @@ h4 {
                   <button type="button" class="btn btn-custom btn-lg mt-5" id="turningPrivate">비공개 계정으로 계속 이용하기</button>
                </div>
                 <div>
-                  <button type="button" class="btn btn-custom btn-lg mt-2" id="leave">계정 탈퇴</button>
+                  <button type="button" class="btn btn-custom btn-lg mt-2" id="leave">탈퇴하기</button>
                </div>  
         </div>
     </div>

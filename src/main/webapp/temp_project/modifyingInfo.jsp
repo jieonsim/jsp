@@ -56,7 +56,7 @@ h4 {
 }
 
 #ment {
-	font-size: 16px; 
+	font-size: 14px; 
 	color: dimgray;
 	text-align: center;
 }
@@ -67,8 +67,8 @@ h4 {
     <jsp:include page="nav.jsp" />
     <div class="container mt-5 pt-3">
         <div class="findingPassword-container">
-            <h4 class="mb-3">내 정보 수정</h4>
-            <!-- <div class="mb-1 text-center">비밀번호 재확인</div> -->
+            <h4 class="mb-5">내 정보 수정</h4>
+            <div class="mb-1 text-center">비밀번호 재확인</div>
             <div class="mb-5" id="ment">회원님의 정보를 안전하게 보호하기 위해<br>비밀번호를 다시 한번 확인해주세요.</div>
             <form class="findingPassword-form" method="post" action="">
                 <div class="form-group row">
