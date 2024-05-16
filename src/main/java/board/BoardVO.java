@@ -13,14 +13,23 @@ public class BoardVO {
 	private int good;
 	private int hour_diff; // 게시글 24시간 경과 유무 체크
 	private int date_diff; // 게시글 24시간 경과 유무 체크
+	private String complaint;
 	
 	@Override
 	public String toString() {
 		return "BoardVO [idx=" + idx + ", mid=" + mid + ", nickName=" + nickName + ", title=" + title + ", content="
 				+ content + ", readNum=" + readNum + ", hostIp=" + hostIp + ", openSw=" + openSw + ", wDate=" + wDate
-				+ ", good=" + good + ", hour_diff=" + hour_diff + ", date_diff=" + date_diff + "]";
+				+ ", good=" + good + ", hour_diff=" + hour_diff + ", date_diff=" + date_diff + ", complaint="
+				+ complaint + "]";
 	}
-	
+
+	public String getComplaint() {
+		return complaint;
+	}
+
+	public void setComplaint(String complaint) {
+		this.complaint = complaint;
+	}
 
 	public int getDate_diff() {
 		return date_diff;

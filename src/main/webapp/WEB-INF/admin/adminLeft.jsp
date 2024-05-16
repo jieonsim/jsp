@@ -42,7 +42,7 @@ h5 {
 	<div>
 		<h5>회원관리</h5>
 		<div><a href="MemberList.ad" target="adminContent">회원 리스트</a></div>
-		<div><a href="#" target="adminContent">신고 리스트</a></div>
+		<div><a href="ComplaintList.ad" target="adminContent">신고 리스트</a></div>
 	</div>
 	<hr>
 </div>

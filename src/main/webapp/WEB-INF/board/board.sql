@@ -11,6 +11,7 @@ create table board(
 	openSw char(2) default 'OK', /*게시글 공개여부(OK:공개, NO: 비공개) */
 	wDate datetime default now(), /*작성일자*/
 	good int default 0, /* '좋아요' 클릭 횟수 누적 */
+	complaint char(2) default 'NO', /*신고글 유무(신고당한 글은 OK가 됨, 정상적인 글은 NO) <<= 추가되는 필드는 */
 	primary key(idx), /*기본키 : 고유번호 */
 	foreign key(mid) references member(mid)
 );
