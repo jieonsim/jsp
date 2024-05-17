@@ -41,7 +41,7 @@ public class AdminController extends HttpServlet {
 			return;
 		}
 		else if(level > 0) {
-			request.setAttribute("message", "로그인후 사용하세요");
+			request.setAttribute("message", "로그 인후 사용하세요");
 			request.setAttribute("url", request.getContextPath()+"/MemberLogin.mem");
 			viewPage = "/include/message.jsp";
 		}
@@ -91,11 +91,13 @@ public class AdminController extends HttpServlet {
 			command.execute(request, response);
 			viewPage += "/complaint/complaintList.jsp";
 		}
-		else if(com.equals("/ComplaintCheck.ad")) {
+		else if(com.equals("/ComplaintCheck")) {
 			command = new ComplaintCheckCommand();
 			command.execute(request, response);
 			return;
 		}
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);		

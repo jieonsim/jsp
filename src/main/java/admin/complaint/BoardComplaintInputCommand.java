@@ -13,10 +13,10 @@ public class BoardComplaintInputCommand implements AdminInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String part = request.getParameter("part") == null ? "" : request.getParameter("part");
-		int partIdx = request.getParameter("partIdx") == null ? 0 : Integer.parseInt(request.getParameter("partIdx"));
-		String cpMid = request.getParameter("cpMid") == null ? "" : request.getParameter("cpMid");
-		String cpContent = request.getParameter("cpContent") == null ? "" : request.getParameter("cpContent");
+		String part = request.getParameter("part")==null ? "" : request.getParameter("part");
+		int partIdx = request.getParameter("partIdx")==null ? 0 : Integer.parseInt(request.getParameter("partIdx"));
+		String cpMid = request.getParameter("cpMid")==null ? "" : request.getParameter("cpMid");
+		String cpContent = request.getParameter("cpContent")==null ? "" : request.getParameter("cpContent");
 		
 		AdminDAO dao = new AdminDAO();
 		ComplaintVO vo = new ComplaintVO();
@@ -28,8 +28,6 @@ public class BoardComplaintInputCommand implements AdminInterface {
 		
 		int res = dao.setBoardComplaintInput(vo);
 		
-		response.getWriter().write(res);
-		
+		response.getWriter().write(res + "");
 	}
-
 }

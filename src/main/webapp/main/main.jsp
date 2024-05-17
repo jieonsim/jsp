@@ -27,7 +27,7 @@
 	<div class="container" style="margin-top: 30px">
 		<div class="row">
 			<div class="col-sm-4">
-				<h2>${sName}님 환영합니다!</h2>
+				<h2>${sNickName}님 환영합니다!</h2>
 				<h5>Photo of me:</h5>
 				<div class="fakeimg">Fake Image</div>
 				<p>Some text about me in culpa qui officia deserunt mollit

@@ -21,5 +21,4 @@ public class ComplaintListCommand implements AdminInterface {
 		request.setAttribute("vos", vos);
 		request.setAttribute("complaintCnt", vos.size());
 	}
-
 }
