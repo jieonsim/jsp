@@ -41,7 +41,7 @@ public class AdminController extends HttpServlet {
 			return;
 		}
 		else if(level > 0) {
-			request.setAttribute("message", "로그 인후 사용하세요");
+			request.setAttribute("message", "로그인 후 사용하세요");
 			request.setAttribute("url", request.getContextPath()+"/MemberLogin.mem");
 			viewPage = "/include/message.jsp";
 		}

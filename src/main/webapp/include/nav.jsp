@@ -72,6 +72,10 @@
 			      <a class="dropdown-item" href="${ctp}/study/database/login.jsp">로그인 연습</a>
 			      <a class="dropdown-item" href="Modal1.st">모달 연습1</a>
 			      <a class="dropdown-item" href="Modal2.st">모달 연습2</a>
+			      <a class="dropdown-item" href="FileUpload1.st">싱글 파일 업로드 연습</a>
+			      <a class="dropdown-item" href="FileUpload2.st">멀티 파일 업로드 연습2</a>
+			      <a class="dropdown-item" href="FileUpload3.st">멀티 파일 업로드 연습3</a>
+			      <a class="dropdown-item" href="FileUpload4.st">멀티 파일 업로드 연습4</a>
 			    </div>
 			  </div>
 	      	</li>
