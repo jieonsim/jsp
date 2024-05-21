@@ -72,7 +72,7 @@
 							<a href="#" class="badge badge-danger">삭제</a>
 							<br />
 						</c:if>
-						<a href="PdsTotalDown.pds?idx=${vo.idx}" class="badge badge-primary">전체파일다운로드</a>
+						<a href="PdsTotalDown.pds?idx=${vo.idx}" class="badge badge-primary">전체파일다운</a>
 					</td>
 				</tr>
 				<c:set var="curScrStartNo" value="${curScrStartNo - 1}" />
