@@ -25,6 +25,9 @@ public class FileUpload4OkCommand implements StudyInterface {
 		
 		// 업로드된 파일의 정보를 추출해본다.
 		
+		String fNames = multipartRequest.getParameter("fNames");
+		
+		@SuppressWarnings("rawtypes")
 		Enumeration fileNames = multipartRequest.getFileNames();
 		
 		String file = "";
@@ -41,6 +44,7 @@ public class FileUpload4OkCommand implements StudyInterface {
 		
 		System.out.println("원본 파일명 : " + oFileName);
 		System.out.println("서버에 저장된 파일명 : " + fsName);
+		System.out.println("클라이언트에서 업로드된 파일명 : " + fNames);
 		
 		if(oFileName != null && !oFileName.equals("")) {
 			request.setAttribute("message", "파일이 업로드 되었습니다.");

@@ -25,10 +25,8 @@
 		let fileSize = document.getElementById("file").files[0].size;
 		if (fileSize > maxSize) {
 			alert("업로드할 파일의 최대용량은 10MByte입니다.");
-		} else if (ext != 'jpg' && ext != 'gif' && ext != 'png' && ext != 'zip'
-				&& ext != 'hwp' && ext != 'ppt' && ext != 'pptx'
-				&& ext != 'doc' && ext != 'pdf' && ext != 'xlsx'
-				&& ext != 'txt') {
+		} else if (ext != 'jpg' && ext != 'gif' && ext != 'png' && ext != 'zip' && ext != 'hwp' && ext != 'ppt' && ext != 'pptx' && ext != 'doc'
+				&& ext != 'pdf' && ext != 'xlsx' && ext != 'txt') {
 			alert("업로드 가능한 파일은 'jpg/gif/png/zip/hwp/ppt/pptx/doc/pdf/xlsx/txt'만 가능합니다.");
 		} else {
 			myform.submit();
@@ -71,8 +69,13 @@
 		<br />
 		<img id="demoImg" width="200px" />
 		<hr />
-		<div>
-			<a href="FileDownload.st" class="btn btn-primary form-control">다운로드폴더로 이동하기</a>
+		<div class="row">
+			<div class="col">
+				<a href="FileDownload.st" class="btn btn-primary form-control">다운로드폴더로 이동하기</a>
+			</div>
+			<div class="col text-center">
+				<a href="FileUpload.st" class="btn btn-warning form-control">돌아가기</a>
+			</div>
 		</div>
 	</div>
 	<p>

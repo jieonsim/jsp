@@ -7,40 +7,29 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import common.SecurityUtil;
 
-public class MemberJoinOkCommand implements MemberInterface {
+public class MemberJoinOkCommand2 implements MemberInterface {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String realPath = request.getServletContext().getRealPath("/images/member");
-		int maxSize = 1024 * 1024 * 5;
-		String encoding = "UTF-8";
-		
-		MultipartRequest mutilMultipartRequest = new MultipartRequest(request, realPath, maxSize, encoding, new DefaultFileRenamePolicy());
-		
-		String mid = mutilMultipartRequest.getParameter("mid")==null? "" : mutilMultipartRequest.getParameter("mid");
-		String pwd = mutilMultipartRequest.getParameter("pwd")==null? "" : mutilMultipartRequest.getParameter("pwd");
-		String nickName = mutilMultipartRequest.getParameter("nickName")==null? "" : mutilMultipartRequest.getParameter("nickName");
-		String name = mutilMultipartRequest.getParameter("name")==null? "" : mutilMultipartRequest.getParameter("name");
-		String gender = mutilMultipartRequest.getParameter("gender")==null? "" : mutilMultipartRequest.getParameter("gender");
-		String birthday = mutilMultipartRequest.getParameter("birthday")==null? "" : mutilMultipartRequest.getParameter("birthday");
-		String tel = mutilMultipartRequest.getParameter("tel")==null? "" : mutilMultipartRequest.getParameter("tel");
-		String address = mutilMultipartRequest.getParameter("address")==null? "" : mutilMultipartRequest.getParameter("address");
-		String email = mutilMultipartRequest.getParameter("email")==null? "" : mutilMultipartRequest.getParameter("email");
-		String homePage = mutilMultipartRequest.getParameter("homePage")==null? "" : mutilMultipartRequest.getParameter("homePage");
-		String job = mutilMultipartRequest.getParameter("job")==null? "" : mutilMultipartRequest.getParameter("job");
+		String mid = request.getParameter("mid")==null? "" : request.getParameter("mid");
+		String pwd = request.getParameter("pwd")==null? "" : request.getParameter("pwd");
+		String nickName = request.getParameter("nickName")==null? "" : request.getParameter("nickName");
+		String name = request.getParameter("name")==null? "" : request.getParameter("name");
+		String gender = request.getParameter("gender")==null? "" : request.getParameter("gender");
+		String birthday = request.getParameter("birthday")==null? "" : request.getParameter("birthday");
+		String tel = request.getParameter("tel")==null? "" : request.getParameter("tel");
+		String address = request.getParameter("address")==null? "" : request.getParameter("address");
+		String email = request.getParameter("email")==null? "" : request.getParameter("email");
+		String homePage = request.getParameter("homePage")==null? "" : request.getParameter("homePage");
+		String job = request.getParameter("job")==null? "" : request.getParameter("job");
 		//String hobby = request.getParameter("hobby")==null? "" : request.getParameter("hobby");
-		String photo = mutilMultipartRequest.getFilesystemName("fName")==null? "noimage.jpg" : mutilMultipartRequest.getFilesystemName("fName");
-		// 사진은 null이 아닐 경우에는 fileSystemName으로 저장해야함
-		System.out.println("photo" + photo);
-		String content = mutilMultipartRequest.getParameter("content")==null? "" : mutilMultipartRequest.getParameter("content");
-		String userInfor = mutilMultipartRequest.getParameter("userInfor")==null? "" : mutilMultipartRequest.getParameter("userInfor");
+		String photo = request.getParameter("photo")==null? "noimage.jpg" : request.getParameter("photo");
+		String content = request.getParameter("content")==null? "" : request.getParameter("content");
+		String userInfor = request.getParameter("userInfor")==null? "" : request.getParameter("userInfor");
 		
-		String[] hobbys = mutilMultipartRequest.getParameterValues("hobby");
+		String[] hobbys = request.getParameterValues("hobby");
 		String hobby = "";
 		if(hobbys.length != 0) {
 			for(String h : hobbys) {

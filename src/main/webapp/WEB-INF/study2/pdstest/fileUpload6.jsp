@@ -6,14 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fileUpload4.jsp</title>
+<title>fileUpload6.jsp</title>
 <%@ include file="/include/bs4.jsp"%>
 <script>
     'use strict';
     
     function fCheck() {
     	let fName = document.getElementById("file").value;
-    	let fNames = "";
     	let ext = "";
     	let fileSize = 0;
     	let maxSize = 1024 * 1024 * 10;	// 기본 단위 : Byte,   1024 * 1024 * 10 = 10MByte 허용
@@ -37,7 +36,6 @@
 	    			&& ext != 'xlsx' && ext != 'txt') {
 	    		alert("업로드 가능한 파일은 'jpg/gif/png/zip/hwp/ppt/pptx/doc/pdf/xlsx/txt'만 가능합니다.");
 	    	}
-	    	fNames += fName + "/";
     	}
     	
     	
@@ -45,7 +43,6 @@
     		alert("업로드 파일의 최대용량은 10MByte입니다.");
     	}
     	else {
-    		document.getElementById("fNames").value = fNames;
     		myform.submit();
     	}
     }
@@ -60,17 +57,15 @@
 	</p>
 	<div class="container">
 		<h2>파일 업로드 연습(멀티파일처리)</h2>
-		<p>COS라이브러리를 이용한 파일 업로드</p>
-		<div>(http://www.servlets.com/cos/)</div>
-		<hr />
-		<form name="myform" method="post" action="FileUpload4Ok.st" enctype="multipart/form-data">
+		<h4>자바 서블릿의 Part객체를 이용한 파일 업로드</h4>
+		<div>(javax.servlet.http.Part)</div>
+		<hr>
+		<form name="myform" method="post" action="FileUpload6Ok" enctype="multipart/form-data">
 			파일명 :
 			<div>
 				<input type="file" name="fName" id="file" multiple class="form-control-file border mb-2" />
 			</div>
 			<input type="button" value="파일전송" onclick="fCheck()" class="btn btn-success form-control" />
-			<input type="hidden" name="nickName" value="${sNickName}" />
-			<input type="hidden" name="fNames" id="fNames" />
 		</form>
 		<hr />
 		<div class="row">
