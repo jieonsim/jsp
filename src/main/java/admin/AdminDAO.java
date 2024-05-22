@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import admin.complaint.ComplaintVO;
+import admin.review.ReviewVO;
 import common.GetConn;
 import member.MemberVO;
 
@@ -175,19 +176,19 @@ public class AdminDAO {
 	// 신고내역 저장하기
 	public int setBoardComplaintInput(ComplaintVO vo) {
 		int res = 0;
-	try {
-		sql = "insert into complaint values (default, ?, ?, ?, ?, default)";
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, vo.getPart());
-		pstmt.setInt(2, vo.getPartIdx());
-		pstmt.setString(3, vo.getCpMid());
-		pstmt.setString(4, vo.getCpContent());
-		res = pstmt.executeUpdate();
-	} catch (SQLException e) {
-		System.out.println("SQL 오류 : " + e.getMessage());
-	} finally {
-		pstmtClose();			
-	}
+		try {
+			sql = "insert into complaint values (default, ?, ?, ?, ?, default)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getPart());
+			pstmt.setInt(2, vo.getPartIdx());
+			pstmt.setString(3, vo.getCpMid());
+			pstmt.setString(4, vo.getCpContent());
+			res = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			pstmtClose();
+		}
 		return res;
 	}
 
@@ -200,13 +201,13 @@ public class AdminDAO {
 			pstmt.setString(1, part);
 			pstmt.setInt(2, partIdx);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				report = "OK";
 			}
 		} catch (SQLException e) {
 			System.out.println("SQL 오류 : " + e.getMessage());
 		} finally {
-			rsClose();			
+			rsClose();
 		}
 		return report;
 	}
@@ -218,9 +219,9 @@ public class AdminDAO {
 			sql = "select date_format(c.cpDate, '%Y-%m-%d %H:%i') as cpDate, c.*, b.title as title, b.nickName as nickName, b.mid as mid, b.complaint as complaint from complaint c, board b where c.partIdx = b.idx order by idx desc";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
+
 			ComplaintVO vo = null;
-			while(rs.next()) {
+			while (rs.next()) {
 				vo = new ComplaintVO();
 				vo.setIdx(rs.getInt("idx"));
 				vo.setPart(rs.getString("part"));
@@ -228,25 +229,25 @@ public class AdminDAO {
 				vo.setCpMid(rs.getString("cpMid"));
 				vo.setCpDate(rs.getString("cpDate"));
 				vo.setCpContent(rs.getString("cpContent"));
-				
+
 				vo.setTitle(rs.getString("title"));
 				vo.setNickName(rs.getString("nickName"));
 				vo.setMid(rs.getString("mid"));
 				vo.setComplaint(rs.getString("complaint"));
-				
+
 				vos.add(vo);
 			}
 		} catch (SQLException e) {
 			System.out.println("SQL 오류 : " + e.getMessage());
 		} finally {
-			rsClose();			
+			rsClose();
 		}
 		return vos;
 	}
 
 	public void setComplaintCheck(String part, int partIdx, String complaints) {
 		try {
-			if(complaints.equals("NO")) {
+			if (complaints.equals("NO")) {
 				sql = "update " + part + " set complaint = 'OK' where idx = ?";
 			} else {
 				sql = "update " + part + " set complaint = 'NO' where idx = ?";
@@ -257,8 +258,97 @@ public class AdminDAO {
 		} catch (SQLException e) {
 			System.out.println("SQL 오류 : " + e.getMessage());
 		} finally {
-			pstmtClose();			
+			pstmtClose();
 		}
-		
+
+	}
+
+	// 리뷰를 작성했는지 여부 체크
+	public int getReviewSearch(ReviewVO vo) {
+		int res = 0;
+		try {
+			sql = "select * from review where part = ? and partIdx = ? and mid = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getPart());
+			pstmt.setInt(2, vo.getPartIdx());
+			pstmt.setString(3, vo.getMid());
+			rs = pstmt.executeQuery();
+			if (rs.next())
+				res = 1;
+
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+
+		return res;
+	}
+
+	// 리뷰작성 처리하기
+	public int setReviewInputOk(ReviewVO vo) {
+		int res = 0;
+		try {
+			sql = "insert into review values(default, ?, ?, ?, ?, ?, ?, default)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getPart());
+			pstmt.setInt(2, vo.getPartIdx());
+			pstmt.setString(3, vo.getMid());
+			pstmt.setString(4, vo.getNickName());
+			pstmt.setInt(5, vo.getStar());
+			pstmt.setString(6, vo.getContent());
+			res = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			pstmtClose();
+		}
+		return res;
+	}
+
+	// 리뷰 내역 전체 리스트 가져오기
+	public ArrayList<ReviewVO> getReviewList(int idx, String part) {
+		ArrayList<ReviewVO> rVos = new ArrayList<ReviewVO>();
+		try {
+			sql = "select * from review where part = ? and partIdx = ? order by idx desc";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, part);
+			pstmt.setInt(2, idx);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				ReviewVO vo = new ReviewVO();
+				vo.setIdx(rs.getInt("idx"));
+				vo.setPart(rs.getString("part"));
+				vo.setPartIdx(rs.getInt("partIdx"));
+				vo.setMid(rs.getString("mid"));
+				vo.setNickName(rs.getString("nickName"));
+				vo.setStar(rs.getInt("star"));
+				vo.setContent(rs.getString("content"));
+				vo.setrDate(rs.getString("rDate"));
+				rVos.add(vo);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			rsClose();
+		}
+		return rVos;
+	}
+
+	public int setReviewDelete(int idx) {
+		int res = 0;
+		try {
+			sql = "delete from review where idx = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, idx);
+			res = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			pstmtClose();
+		}
+		return res;
 	}
 }
