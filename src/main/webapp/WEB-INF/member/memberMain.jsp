@@ -9,6 +9,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>memberMain.jsp</title>
 	<%@ include file = "/include/bs4.jsp" %>
+	<script>
+		'use strict';
+		
+		// 채팅 내용을 DB에 저장
+		function chatInput() {
+			let chat = $("#chat").val();
+			if(chat.trim() != "") {
+				$.ajax({
+					url : "MemberChatInput.mem",
+					type : "post",
+					data : {chat : chat},
+					error : function() {
+						alert("전송 오류");
+					}
+				});
+			}
+		}
+		
+		
+		// 채팅 대화 입력 후 엔터키를 누르면 자동으로 메시지 DB에 저장시키기. chatInput() 함수 호출시키기
+		$(function(){
+			$("#chat").on("keydown", function(e){
+				if(e.keyCode == 13) chatInput();
+			});			
+		});
+	</script>
 </head>
 <body>
 <jsp:include page="/include/header.jsp" />
@@ -17,7 +43,21 @@
 	<h2>회원 전용 방</h2>
 	<hr>
 	<!-- 실시간 채팅방(DB) -->
-	<hr>
+		<div style="width: 460px">
+			<form name="chatForm">
+				<label for="chat">
+					<b>실시간 대화방</b>
+				</label>
+				<iframe src="${ctp}/include/memberMessage.jsp" width="100%" height="200px;" class="border"></iframe>
+				<div class="input-group mt-1">
+					<input type="text" name="chat" id="chat" class="form-control" placeholder="대화 내용을 입력하세요." autofocus />
+					<div class="input-group-append">
+						<input type="button" value="글 등록" onclick="chatInput()" class="btn btn-success" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<hr>
   <div class="row">
     <div class="col">
 	  	<p>현재 <b><font color="blue">${sNickName}</font>(<font color="red">${strLevel}</font>)</b> 님이 로그인 중이십니다.</p>

@@ -7,52 +7,71 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 public class MemberUpdateOkCommand implements MemberInterface {
 
+	@SuppressWarnings("unused")
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String mid = request.getParameter("mid")==null? "" : request.getParameter("mid");
-		String nickName = request.getParameter("nickName")==null? "" : request.getParameter("nickName");
-		String name = request.getParameter("name")==null? "" : request.getParameter("name");
-		String gender = request.getParameter("gender")==null? "" : request.getParameter("gender");
-		String birthday = request.getParameter("birthday")==null? "" : request.getParameter("birthday");
-		String tel = request.getParameter("tel")==null? "" : request.getParameter("tel");
-		String address = request.getParameter("address")==null? "" : request.getParameter("address");
-		String email = request.getParameter("email")==null? "" : request.getParameter("email");
-		String homePage = request.getParameter("homePage")==null? "" : request.getParameter("homePage");
-		String job = request.getParameter("job")==null? "" : request.getParameter("job");
-		//String hobby = request.getParameter("hobby")==null? "" : request.getParameter("hobby");
-		String photo = request.getParameter("photo")==null? "noimage.jpg" : request.getParameter("photo");
-		String content = request.getParameter("content")==null? "" : request.getParameter("content");
-		String userInfor = request.getParameter("userInfor")==null? "" : request.getParameter("userInfor");
-		
-		String[] hobbys = request.getParameterValues("hobby");
+		String realPath = request.getServletContext().getRealPath("/images/member/");
+		int maxSize = 1024 * 1024 * 2;
+		String encoding = "UTF-8";
+
+		MultipartRequest multipartRequest = new MultipartRequest(request, realPath, maxSize, encoding, new DefaultFileRenamePolicy());
+
+		// 회원 사진 업로드 되었는지 여부 처리? 업로드된 파일이 있으면 서버에 저장된 이름을, 없으면 기존파일명을 fsName변수에 저장한다.
+		String photo = multipartRequest.getFilesystemName("fName");
+		String fName = multipartRequest.getParameter("photo");
+		if (photo == null)
+			photo = fName;
+
+		HttpSession session = request.getSession();
+		String mid = (String) session.getAttribute("sMid");
+		String sNickName = (String) session.getAttribute("sNickName");
+
+		String name = multipartRequest.getParameter("name") == null ? "" : multipartRequest.getParameter("name");
+		String nickName = multipartRequest.getParameter("nickName") == null ? "" : multipartRequest.getParameter("nickName");
+		String gender = multipartRequest.getParameter("gender") == null ? "" : multipartRequest.getParameter("gender");
+		String birthday = multipartRequest.getParameter("birthday") == null ? "" : multipartRequest.getParameter("birthday");
+		String tel = multipartRequest.getParameter("tel") == null ? "" : multipartRequest.getParameter("tel");
+		String address = multipartRequest.getParameter("address") == null ? "" : multipartRequest.getParameter("address");
+		String email = multipartRequest.getParameter("email") == null ? "" : multipartRequest.getParameter("email");
+		String homePage = multipartRequest.getParameter("homePage") == null ? "" : multipartRequest.getParameter("homePage");
+		String job = multipartRequest.getParameter("job") == null ? "" : multipartRequest.getParameter("job");
+		// String hobby = multipartRequest.getParameter("hobby")==null? "" :
+		// multipartRequest.getParameter("hobby");
+		// String photo = multipartRequest.getParameter("photo")==null? "noimage.jpg" :
+		// multipartRequest.getParameter("photo");
+		String content = multipartRequest.getParameter("content") == null ? "" : multipartRequest.getParameter("content");
+		String userInfor = multipartRequest.getParameter("userInfor") == null ? "" : multipartRequest.getParameter("userInfor");
+
+		String[] hobbys = multipartRequest.getParameterValues("hobby");
 		String hobby = "";
-		if(hobbys.length != 0) {
-			for(String h : hobbys) {
+		if (hobbys.length != 0) {
+			for (String h : hobbys) {
 				hobby += h + "/";
 			}
 		}
 		hobby = hobby.substring(0, hobby.lastIndexOf("/"));
-		
+
 		// DB에 저장시킨자료중 not null 데이터는 Back End 체크시켜준다.
-		
+
 		// 닉네임 중복체크....
-		HttpSession session = request.getSession();
-		String sNickName = (String) session.getAttribute("sNickName");
-		
 		MemberDAO dao = new MemberDAO();
 		MemberVO vo = dao.getMemberNickCheck(nickName);
-		
+
 		// 세션의 닉네임과 앞에서 넘어온 닉네임을 비교해서 같지 않으면 사용자가 닉네임을 수정한 것이다.
-		if(!nickName.equals(sNickName)) {
-			if(vo.getNickName() != null) {
+		if (!nickName.equals(sNickName)) {
+			String tempNickName = dao.getMemberNickCheck(nickName).getNickName();
+			if (tempNickName != null) {
 				request.setAttribute("msg", "이미 사용중인 닉네임 입니다.");
-				request.setAttribute("url", "MemberJoin.mem");
+				request.setAttribute("url", "MemberUpdate.mem");
 				return;
 			}
 		}
-		
+
 		// 모든 체크가 끝난 자료는 vo에 담아서 DB에 저장처리한다.
 		vo = new MemberVO();
 		vo.setMid(mid);
@@ -69,16 +88,14 @@ public class MemberUpdateOkCommand implements MemberInterface {
 		vo.setPhoto(photo);
 		vo.setContent(content);
 		vo.setUserInfor(userInfor);
-		
+
 		int res = dao.setMemberUpdateOk(vo);
-		
-		if(res != 0) {
-			// 회원 전용방에 현재 '닉네임' 님이 로그인 중입니다. 부분에 '닉네임'이 변경된 닉네임으로 표기될 수 있도록 세션 처리
-			session.setAttribute("sNickName", vo.getNickName());
+
+		if (res != 0) {
+			session.setAttribute("sNickName", nickName);
 			request.setAttribute("message", "회원 정보가 수정되었습니다.");
 			request.setAttribute("url", "MemberMain.mem");
-		}
-		else {
+		} else {
 			request.setAttribute("message", "회원정보 수정 실패~~");
 			request.setAttribute("url", "MemberUpdate.mem");
 		}

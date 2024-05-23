@@ -9,41 +9,40 @@ import java.util.ArrayList;
 import common.GetConn;
 
 public class MemberDAO {
-	
 	private Connection conn = GetConn.getConn();
-	
+	// private Connection conn2 = GetConn.getConn();
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
-	
+
 	private String sql = "";
 	MemberVO vo = null;
-	
-	/*
-	 * public MemberDAO() { if(conn == conn2) { System.out.println("같은 객체입니다."); }
-	 * else { System.out.println("다른 객체입니다."); } }
-	 */
-	
+
+//	public MemberDAO() {
+//		if(conn == conn2) System.out.println("같은 객체입니다.");
+//		else System.out.println("다른 객체 입니다.");
+//	}
+
 	public void pstmtClose() {
-		if(pstmt != null) {
+		if (pstmt != null) {
 			try {
 				pstmt.close();
-			} catch (SQLException e) {
+			} catch (Exception e) {
 			}
 		}
 	}
-	
+
 	public void rsClose() {
-		if(rs != null) {
+		if (rs != null) {
 			try {
 				rs.close();
-			} catch (SQLException e) {
+			} catch (Exception e) {
 			} finally {
 				pstmtClose();
 			}
 		}
 	}
-	
-	// 로그인 시 아이디 체크하기
+
+	// 로그인시 아이디 체크하기.
 	public MemberVO getMemberIdCheck(String mid) {
 		MemberVO vo = new MemberVO();
 		try {
@@ -51,8 +50,8 @@ public class MemberDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				vo.setIdx(rs.getInt("idx"));
 				vo.setMid(rs.getString("mid"));
 				vo.setPwd(rs.getString("pwd"));
@@ -85,11 +84,11 @@ public class MemberDAO {
 		return vo;
 	}
 
-	// 회원 가입 처리
+	// 회원 가입 처리...
 	public int setMemberJoinOk(MemberVO vo) {
 		int res = 0;
 		try {
-			sql = "insert into member values (default, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default, default, default, default, default, default, default)";
+			sql = "insert into member values (default,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,default,default,default,default,default,default,default)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getMid());
 			pstmt.setString(2, vo.getPwd());
@@ -123,8 +122,8 @@ public class MemberDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, nickName);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				vo.setIdx(rs.getInt("idx"));
 				vo.setMid(rs.getString("mid"));
 				vo.setPwd(rs.getString("pwd"));
@@ -157,7 +156,7 @@ public class MemberDAO {
 		return vo;
 	}
 
-	// 로그인 시에 처리할 내용들을 업데이트 시켜준다.
+	// 로그인시에 처리할 내용들을 업데이트 시켜준다.
 	public void setLoginUpdate(MemberVO vo) {
 		try {
 			sql = "update member set point=?, lastDate=now(), visitCnt=visitCnt+1, todayCnt=? where mid = ?";
@@ -173,15 +172,15 @@ public class MemberDAO {
 		}
 	}
 
-	// 회원 전체리스트
+	// 회원 전체 리스트
 	public ArrayList<MemberVO> getMemberList() {
 		ArrayList<MemberVO> vos = new ArrayList<MemberVO>();
 		try {
 			sql = "select * from member order by idx";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				vo = new MemberVO();
 				vo.setIdx(rs.getInt("idx"));
 				vo.setMid(rs.getString("mid"));
@@ -216,6 +215,7 @@ public class MemberDAO {
 		return vos;
 	}
 
+	// 비밀번호 변경처리
 	public int setMemberPwdChange(String mid, String pwd) {
 		int res = 0;
 		try {
@@ -262,7 +262,7 @@ public class MemberDAO {
 		return res;
 	}
 
-	// 회원 탈퇴 신청
+	// 회원 탈퇴 신청처리...
 	public int setMemberDeleteUpdate(String mid) {
 		int res = 0;
 		try {
@@ -276,5 +276,42 @@ public class MemberDAO {
 			pstmtClose();
 		}
 		return res;
+	}
+
+	// 채팅내용 DB에 저장하기
+	public void setMemberChatInputOk(String nickName, String chat) {
+		try {
+			sql = "insert into memberChat values (default,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, nickName);
+			pstmt.setString(2, chat);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			pstmtClose();
+		}
+	}
+
+	// 채팅내용 DB에서 읽어오기
+	public ArrayList<MemberChatVO> getMemberMessage() {
+		ArrayList<MemberChatVO> vos = new ArrayList<MemberChatVO>();
+		try {
+			sql = "select m.* from (select * from memberChat order by idx desc limit 50) m order by idx";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				MemberChatVO vo = new MemberChatVO();
+				vo.setIdx(rs.getInt("idx"));
+				vo.setNickName(rs.getString("nickName"));
+				vo.setChat(rs.getString("chat"));
+				vos.add(vo);
+			}
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			pstmtClose();
+		}
+		return vos;
 	}
 }

@@ -36,3 +36,40 @@ insert into member values (default, 'admin', '1234', '관리맨', '관리자', '
 select * from member;
 
 select lastDate, now(), timestampdiff(day, lastDate, now()) as deleteDiff from member;
+
+
+/*실시간 DB채팅 테이블 설계*/
+create table memberChat (
+	idx int not null auto_increment primary key,
+	nickName varchar(20) not null,
+	chat varchar(100) not null
+);
+
+desc memberChat;
+
+insert into memberChat values (default, 'admin', '안녕');
+insert into memberChat values (default, 'jojo123', '하이요');
+insert into memberChat values (default, 'jojo123', 'ㅋㅋ');
+insert into memberChat values (default, 'admin', '다들');
+insert into memberChat values (default, 'admin', '점심');
+insert into memberChat values (default, 'admin', '뭐드시나');
+insert into memberChat values (default, 'admin', '매일고민중');
+insert into memberChat values (default, 'admin', '뿌엥');
+insert into memberChat values (default, 'zizi', '하이~~');
+insert into memberChat values (default, 'zizi', '좀있다 점심시간이다 히히');
+insert into memberChat values (default, 'admin', '안녕3');
+insert into memberChat values (default, 'admin', '안녕4');
+insert into memberChat values (default, 'admin', '안녕5');
+insert into memberChat values (default, 'admin', '안녕6');
+insert into memberChat values (default, 'admin', '안녕7');
+insert into memberChat values (default, 'admin', '안녕8');
+insert into memberChat values (default, 'admin', '안녕9');
+insert into memberChat values (default, 'admin', '안녕10');
+insert into memberChat values (default, 'admin', '안녕11');
+insert into memberChat values (default, 'admin', '안녕12');
+insert into memberChat values (default, 'admin', '안녕13');
+insert into memberChat values (default, 'admin', '안녕14');
+insert into memberChat values (default, 'admin', '안녕15');
+
+select * from memberChat order by idx desc limit 20;
+select m.* from (select * from memberChat order by idx desc limit 20) m order by idx;
