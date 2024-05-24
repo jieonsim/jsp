@@ -76,6 +76,15 @@
 			    </div>
 			  </div>
 	      	</li>
+	      	<li class="nav-item">
+			  <div class="dropdown">
+			    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">Study3</button>
+			    <div class="dropdown-menu">
+			      <a class="dropdown-item" href="Calendar1.st">달력연습1</a>
+			      <a class="dropdown-item" href="Calendar2.st">달력연습2</a>
+			    </div>
+			  </div>
+	      	</li>
         </c:if>
         <c:if test="${level <= 4}">
 	      	<li class="nav-item">
@@ -84,7 +93,7 @@
 			    <div class="dropdown-menu">
 			      <a class="dropdown-item" href="MemberMain.mem">회원메인방</a>
 			      <c:if test="${level <= 4 && (level > 1 || level == 0)}">
-			      	<a class="dropdown-item" href="#">일정관리</a>
+			      	<a class="dropdown-item" href="Schedule.sc">일정관리</a>
 			      	<a class="dropdown-item" href="#">메시지관리</a>
 				    <a class="dropdown-item" href="MemberList.mem">회원리스트</a>
 			      </c:if>
