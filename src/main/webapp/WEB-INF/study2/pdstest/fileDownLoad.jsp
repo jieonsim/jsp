@@ -117,9 +117,9 @@
 		<form name="myform">
 			<c:forEach var="file" items="${files}" varStatus="st">
 				<input type="checkbox" name="fileFlag" id="fileFlag${st.index}" value="${file}" />
-	   				${st.count} : <a href="${ctp}/images/pdstest/${file}" download="${file}">${file}</a>
+	    ${st.count} : <a href="${ctp}/images/pdstest/${file}" download="${file}">${file}</a>
 				<input type="button" value="삭제" onclick="fileDelete('${file}')" class="btn btn-danger btn-sm" />
-				<input type="button" value="자바다운로드" onclick="location.href='JavaFileDownload.st?file=${file}';" class="btn btn-secondary btn-sm" />
+				<input type="button" value="자바다운로드" onclick="location.href='JavaFileDownload.st?file=${file}';" class="btn btn-secondary" />
 				<br />
 				<c:set var="fNameArr" value="${fn:split(file,'.')}" />
 				<c:set var="extName" value="${fn:toLowerCase(fNameArr[fn:length(fNameArr)-1])}" />

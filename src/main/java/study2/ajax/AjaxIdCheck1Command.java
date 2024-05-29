@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import study2.StudyInterface;
-import study2.studyDAO;
+import study2.StudyDAO;
 
 public class AjaxIdCheck1Command implements StudyInterface {
 
@@ -15,7 +15,7 @@ public class AjaxIdCheck1Command implements StudyInterface {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		
-		studyDAO dao = new studyDAO();
+		StudyDAO dao = new StudyDAO();
 		
 		String name = dao.getIdSearch(mid);
 				

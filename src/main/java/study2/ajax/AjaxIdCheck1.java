@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import study2.studyDAO;
+import study2.StudyDAO;
 
 @SuppressWarnings("serial")
 @WebServlet("/AjaxIdCheck1")
@@ -18,7 +18,7 @@ public class AjaxIdCheck1 extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mid = request.getParameter("mid")==null ? "" : request.getParameter("mid");
 		
-		studyDAO dao = new studyDAO();
+		StudyDAO dao = new StudyDAO();
 		
 		String name = dao.getIdSearch(mid);
 				
